@@ -108,7 +108,6 @@ nextButton.addEventListener('click', () => {
 	 if(indexSlide < 1) {
     nSalariesPresents = parseInt(nSalaries.value) * (5 - parseInt(jourTravail.value)) / 5
     console.log(nSalariesPresents)
-    console.log(nSalaries)
   }
 
   if(indexSlide < 5) {
@@ -194,12 +193,20 @@ teaVrac.addEventListener('click', () => {
 	teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
     resumeTeaPrice.textContent = Math.round(teaPrice * 100) / 100
 	resumeTeaText.textContent = "vrac"
+
+    if(teaPrice === "NaN"){
+        teaPrice = 0
+    }
 })
 
 teaSachets.addEventListener('click', () => {
 	teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
     resumeTeaPrice.textContent = Math.round(teaPrice * 100) / 100
 	resumeTeaText.textContent = "sachets"
+
+    if(teaPrice === "NaN"){
+        teaPrice = 0
+    }
 })
 
 // Snacks functions
@@ -332,7 +339,8 @@ subServiceNo.addEventListener('click', () => {
 bornePaperCardboard.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
 
-    if(bornePaperCardboard.checked === false) {
+    if(bornePaperCardboard.checked === true) {
+        bornePaperCardboard.checked === false
         addDnone(messageServiceCheck)
     }
 })
@@ -340,7 +348,8 @@ bornePaperCardboard.addEventListener('click', () => {
 bornePlastic.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
 
-    if(bornePlastic.checked === false) {
+    if(bornePlastic.checked === true) {
+        bornePaperCardboard.checked === false
         addDnone(messageServiceCheck)
     }
 })
@@ -348,7 +357,8 @@ bornePlastic.addEventListener('click', () => {
 borneCan.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
 
-    if(borneCan.checked === false) {
+    if(borneCan.checked === true) {
+        bornePaperCardboard.checked === false
         addDnone(messageServiceCheck)
     }
 })
@@ -356,7 +366,8 @@ borneCan.addEventListener('click', () => {
 borneGlass.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
 
-    if(borneGlass.checked === false) {
+    if(borneGlass.checked === true) {
+        bornePaperCardboard.checked === false
         addDnone(messageServiceCheck)
     }
 })
@@ -364,7 +375,8 @@ borneGlass.addEventListener('click', () => {
 borneDib.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
 
-    if(borneDib.checked === false) {
+    if(borneDib.checked === true) {
+        bornePaperCardboard.checked === false
         addDnone(messageServiceCheck)
     }
 })
