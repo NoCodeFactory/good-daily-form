@@ -211,7 +211,7 @@ subTeaYes.addEventListener('click', () => {
     resumeTeaPrice.textContent = teaPrice
 
     if(securityPriceTea === false) {
-        addedSubPrice + teaPrice
+        addedSubPrice = addedSubPrice += teaPrice
         securityPriceTea = true
     }
 })
@@ -222,7 +222,7 @@ subTeaNo.addEventListener('click', () => {
     subTea.textContent = "Non"
 
     // Reset selected when Yes
-    addedSubPrice - teaPrice
+    addedSubPrice = addedSubPrice -= teaPrice
     teaPrice = 0
     securityPriceTea = false
 })
@@ -273,7 +273,7 @@ subSnacksYes.addEventListener('click', () => {
 
     resumeSnacksPrice.textContent = snacksPriceTotal
     if(securityPriceSnacks === false) {
-        addedSubPrice + snacksPriceTotal
+        addedSubPrice = addedSubPrice += snacksPriceTotal
         securityPriceSnacks = true
     }
 })
@@ -282,7 +282,7 @@ subSnacksNo.addEventListener('click', () => {
     addDnone(contentSnacks)
     subSnacks.textContent = "Non"
 
-    addedSubPrice - snacksPriceTotal
+    addedSubPrice = addedSubPrice -= snacksPriceTotal
     snacksPriceTotal = 0
     securityPriceSnacks = false
 })
@@ -326,7 +326,7 @@ subFruitsYes.addEventListener('click', () => {
 
     resumeFruitsPrice.textContent = fruitsPriceTotal
     if(securityPriceFruits === false) {
-        addedSubPrice + fruitsPriceTotal
+        addedSubPrice = addedSubPrice += fruitsPriceTotal
         securityPriceFruits = true
     }
 })
@@ -348,7 +348,7 @@ subFruitsNo.addEventListener('click', () => {
     addDnone(subFruitsOptions)
     subFruits.textContent = "Non"
 
-    addedSubPrice - fruitsPriceTotal
+    addedSubPrice = addedSubPrice -= fruitsPriceTotal
     fruitsPriceTotal = 0
     securityPriceFruits = false
     mondayCheck.checked = false
@@ -402,7 +402,7 @@ subServiceYes.addEventListener('click', () => {
     }
 
     if(securityPriceService === false) {
-        addedSubPrice + collectPriceTotal
+        addedSubPrice = addedSubPrice += collectPriceTotal
         securityPriceService = true
     }
 })
@@ -412,7 +412,7 @@ subServiceNo.addEventListener('click', () => {
     addDnone(subSerivceOptions)
     subService.textContent = "Non"
 
-    addedSubPrice - collectPriceTotal
+    addedSubPrice = addedSubPrice -= collectPriceTotal
     collectPriceTotal = 0
     securityPriceService = false
 })
