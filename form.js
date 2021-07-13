@@ -206,7 +206,10 @@ subTeaYes.addEventListener('click', () => {
     removeDnone(subTeaOptions)
     subTea.textContent = "Oui"
 
-    resumeTeaPrice.textContent = Math.round(teaPrice * 100) / 100
+    teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
+
+    resumeTeaPrice.textContent = teaPrice
+
     if(securityPriceTea === false) {
         addedSubPrice + (Math.round(teaPrice * 100) / 100)
         securityPriceTea = true
@@ -217,8 +220,6 @@ subTeaNo.addEventListener('click', () => {
     addDnone(contentTea)
     addDnone(subTeaOptions)
     subTea.textContent = "Non"
-    
-    teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
 
     // Reset selected when Yes
     addedSubPrice - (Math.round(teaPrice * 100) / 100)
