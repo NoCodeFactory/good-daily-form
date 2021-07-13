@@ -66,6 +66,9 @@ const subFruitsOptions = document.querySelector('#sub-fruits_options')
 const lundiRadioButton = document.querySelector('#fruits-lundi')
 const mardiRadioButton = document.querySelector('#fruits-mardi')
 const peuImporteRadioButton = document.querySelector('#fruits-peu-importe')
+let mondayCheck = document.querySelector('#monday-check')
+let tuesdayCheck = document.querySelector('#tuesday-check')
+let noneCheck = document.querySelector('#none-check')
 let fruitsPricePerKg = parseFloat(document.querySelector('#fruits-price-per-kg').textContent)
 let fruitsPriceTotal = 0
 
@@ -155,7 +158,7 @@ form.addEventListener('keyup', () => {
 if(parseInt(pointConso.value) >= 3 && parseInt(nSalaries.value) <= 30) {
     removeDnone(conseil)
 } else {
-    addDnone
+    addDnone(conseil)
 }
 
 pointConso.addEventListener('click', () => {
@@ -312,9 +315,9 @@ subFruitsNo.addEventListener('click', () => {
     subFruits.textContent = "Non"
 
     fruitsPriceTotal = 0
-    lundiRadioButton.checked = false
-    mardiRadioButton.checked = false
-    peuImporteRadioButton.checked = false
+    mondayCheck.checked = false
+    tuesdayCheck.checked = false
+    noneCheck.checked = false
 })
 
 
