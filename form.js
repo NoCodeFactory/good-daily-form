@@ -217,6 +217,8 @@ subTeaNo.addEventListener('click', () => {
     addDnone(contentTea)
     addDnone(subTeaOptions)
     subTea.textContent = "Non"
+    
+    teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
 
     // Reset selected when Yes
     addedSubPrice - (Math.round(teaPrice * 100) / 100)
@@ -225,12 +227,10 @@ subTeaNo.addEventListener('click', () => {
 })
 
 teaVrac.addEventListener('click', () => {
-	teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
 	resumeTeaText.textContent = "vrac"
 })
 
 teaSachets.addEventListener('click', () => {
-	teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
 	resumeTeaText.textContent = "sachets"
 })
 
