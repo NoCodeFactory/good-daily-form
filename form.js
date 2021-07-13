@@ -75,12 +75,19 @@ const subServiceYes = document.querySelector('#sub-service-yes')
 const subServiceNo = document.querySelector('#sub-service-no')
 const subSerivceOptions = document.querySelector('#sub-service_options')
 const borneCoffee = document.querySelector('#born-coffee')
+let borneCoffeeCheck = document.querySelector('#born-coffee-check')
 const borneCaps = document.querySelector('#born-caps')
+let borneCapsCheck = document.querySelector('#born-caps-check')
 const bornePaperCardboard = document.querySelector('#born-paper-cardboard')
+let bornePaperCardboardCheck = document.querySelector('#born-paper-cardboard-check')
 const bornePlastic = document.querySelector('#born-plastic')
+let bornePlasticCheck = document.querySelector('#born-plastic-check')
 const borneCan = document.querySelector('#born-can')
+let borneCanCheck = document.querySelector('#born-can-check')
 const borneGlass = document.querySelector('#born-glass')
+let borneGlassCheck = document.querySelector('#born-glass-check')
 const borneDib = document.querySelector('#born-dib')
+let borneDibCheck = document.querySelector('#born-dib-check')
 
 
 
@@ -158,165 +165,6 @@ pointConso.addEventListener('click', () => {
     }
 })
 
-// Coffee functions
-
-subCoffeeYes.addEventListener('click', () => {
-    removeDnone(contentCoffee)
-    removeDnone(subCoffeeOptions)
-    subCoffee.textContent = "Oui"
-})
-
-subCoffeeNo.addEventListener('click', () => {
-    addDnone(contentCoffee)
-    addDnone(subCoffeeOptions)
-    subCoffee.textContent = "Non"
-})
-
-// Tea functions
-
-subTeaYes.addEventListener('click', () => {
-    removeDnone(contentTea)
-    removeDnone(subTeaOptions)
-    subTea.textContent = "Oui"
-})
-
-subTeaNo.addEventListener('click', () => {
-    addDnone(contentTea)
-    addDnone(subTeaOptions)
-    subTea.textContent = "Non"
-    
-    // Reset selected when Yes
-    teaPrice = 0
-})
-
-teaVrac.addEventListener('click', () => {
-	teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
-    resumeTeaPrice.textContent = Math.round(teaPrice * 100) / 100
-	resumeTeaText.textContent = "vrac"
-
-    if(teaPrice === "NaN"){
-        teaPrice = 0
-    }
-})
-
-teaSachets.addEventListener('click', () => {
-	teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
-    resumeTeaPrice.textContent = Math.round(teaPrice * 100) / 100
-	resumeTeaText.textContent = "sachets"
-
-    if(teaPrice === "NaN"){
-        teaPrice = 0
-    }
-})
-
-// Snacks functions
-
-subSnacksYes.addEventListener('click', () => {
-    removeDnone(contentSnacks)
-    subSnacks.textContent = "Oui"
-
-    if(nSalariesPresents <= 15) {
-        snacksPriceTotal = snacksPricePerKg * 3 + addedCostFirstSubscribe
-        resumeSnacksText.textContent = "(3Kg)"
-    }
-
-    if(nSalariesPresents >= 16 && nSalariesPresents <= 30) {
-        snacksPriceTotal = snacksPricePerKg * 6
-        resumeSnacksText.textContent = "(6Kg)"
-    }
-
-    if(nSalariesPresents >= 31 && nSalariesPresents <= 45) {
-        snacksPriceTotal = snacksPricePerKg * 9
-        resumeSnacksText.textContent = "(9Kg)"
-    }
-
-    if(nSalariesPresents >= 46 && nSalariesPresents <= 60) {
-        snacksPriceTotal = snacksPricePerKg * 12
-        resumeSnacksText.textContent = "(12Kg)"
-    }
-
-    if(nSalariesPresents >= 61 && nSalariesPresents <= 75) {
-        snacksPriceTotal = snacksPricePerKg * 15
-        resumeSnacksText.textContent = "(15Kg)"
-    }
-
-    if(nSalariesPresents >= 76) {
-        snacksPriceTotal = snacksPricePerKg * 18
-        resumeSnacksText.textContent = "(18Kg)"
-    }
-
-    resumeSnacksPrice.textContent = snacksPriceTotal
-})
-
-subSnacksNo.addEventListener('click', () => {
-    addDnone(contentSnacks)
-    subSnacks.textContent = "Non"
-
-    snacksPriceTotal = 0
-})
-
-// Fruits functions
-
-subFruitsYes.addEventListener('click', () => {
-    removeDnone(contentFruits)
-    removeDnone(subFruitsOptions)
-    subFruits.textContent = "Oui"
-
-    if(nSalariesPresents <= 15) {
-        fruitsPriceTotal = fruitsPricePerKg * 3 + addedCostFirstSubscribe
-        resumeFruitsText.textContent = "(3Kg)"
-    }
-
-    if(nSalariesPresents >= 16 && nSalariesPresents <= 30) {
-        fruitsPriceTotal = fruitsPricePerKg * 6 * 4
-        resumeFruitsText.textContent = "(6Kg)"
-    }
-
-    if(nSalariesPresents >= 31 && nSalariesPresents <= 45) {
-        fruitsPriceTotal = fruitsPricePerKg * 9 * 4
-        resumeFruitsText.textContent = "(9Kg)"
-    }
-
-    if(nSalariesPresents >= 46 && nSalariesPresents <= 60) {
-        fruitsPriceTotal = fruitsPricePerKg * 12 * 4
-        resumeFruitsText.textContent = "(12Kg)"
-    }
-
-    if(nSalariesPresents >= 61 && nSalariesPresents <= 75) {
-        fruitsPriceTotal = fruitsPricePerKg * 15 * 4
-        resumeFruitsText.textContent = "(15Kg)"
-    }
-
-    if(nSalariesPresents >= 76) {
-        fruitsPriceTotal = fruitsPricePerKg * 18 * 4
-        resumeFruitsText.textContent = "(18Kg)"
-    }
-
-    resumeFruitsPrice.textContent = fruitsPriceTotal
-})
-
-lundiRadioButton.addEventListener('click', () => {
-    resumeFruitsText.textContent = "Livré le Lundi"
-})
-
-mardiRadioButton.addEventListener('click', () => {
-    resumeFruitsText.textContent = "Livré le mardi"
-})
-peuImporteRadioButton.addEventListener('click', () => {
-    resumeFruitsText.textContent = "Livré le Lundi ou Mardi"
-})
-
-subFruitsNo.addEventListener('click', () => {
-    addDnone(contentFruits)
-    addDnone(subFruitsOptions)
-    subFruits.textContent = "Non"
-
-    fruitsPriceTotal = 0
-    lundiRadioButton.checked = false
-    mardiRadioButton.checked = false
-    peuImporteRadioButton.checked = false
-})
-
 
 // Service functions
 
@@ -338,45 +186,45 @@ subServiceNo.addEventListener('click', () => {
 
 bornePaperCardboard.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
+    bornePaperCardboardCheck.checked = !bornePaperCardboardCheck.checked
 
-    if(bornePaperCardboard.checked === true) {
-        bornePaperCardboard.checked === false
+    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
 
 bornePlastic.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
+    bornePlasticCheck.checked = !bornePlasticCheck.checked
 
-    if(bornePlastic.checked === true) {
-        bornePaperCardboard.checked === false
+    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
 
 borneCan.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
+    borneCanCheck.checked = !borneCanCheck.checked
 
-    if(borneCan.checked === true) {
-        bornePaperCardboard.checked === false
+    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
 
 borneGlass.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
+    borneGlassCheck.checked = !borneGlassCheck.checked
 
-    if(borneGlass.checked === true) {
-        bornePaperCardboard.checked === false
+    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
 
 borneDib.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
+    borneDibCheck.checked = !borneDibCheck.checked
 
-    if(borneDib.checked === true) {
-        bornePaperCardboard.checked === false
+    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
