@@ -122,20 +122,23 @@ const removeDnone = (element) => {
 
 // Moving throught the form
 nextButton.addEventListener('click', () => {
-	 if(indexSlide < 1) {
+    if(indexSlide < 1) {
     nSalariesPresents = parseFloat(nSalaries.value) * (5 - parseInt(jourTravail.value)) / 5
     console.log(nSalariesPresents)
   }
 
-  if(indexSlide < 5) {
+    if(indexSlide < 5) {
   	rightArrow.click()
     indexSlide += 1
   }
   
-  if(indexSlide >= 1) {
+    if(indexSlide >= 1) {
   removeDnone(backButton)
   removeDnone(aboResume)
 	}
+
+    singlePrice.textContent = parseFloat((resumeTeaPrice + resumeSnacksPrice + resumeFruitsPrice + resumeFruitsPrice) / nSalaries * daysWorkMonth)
+
 })
 
 backButton.addEventListener('click', () => {
