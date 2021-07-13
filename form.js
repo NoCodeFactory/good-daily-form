@@ -137,7 +137,7 @@ nextButton.addEventListener('click', () => {
   removeDnone(aboResume)
 	}
 
-    singlePrice.textContent = parseFloat((resumeTeaPrice + resumeSnacksPrice + resumeFruitsPrice + resumeFruitsPrice) / nSalaries * daysWorkMonth)
+    singlePrice.textContent = parseFloat((resumeTeaPrice.textContent + resumeSnacksPrice.textContent + resumeFruitsPrice.textContent + resumeFruitsPrice.textContent) / parseInt(nSalaries.value) * daysWorkMonth)
 
 })
 
