@@ -46,16 +46,16 @@ const teaVrac = document.querySelector('#tea-vrac')
 const teaSachets = document.querySelector('#tea-sachets')
 const vrac = document.querySelector('#vrac')
 const sachets = document.querySelector('#sachets')
-let teaPercentageConsumption = parseInt(document.querySelector('#tea-percentage-consumption').textContent)
-let teaDayConsumption = parseInt(document.querySelector('#tea-day-consumption').textContent)
-let singleTeaPrice = parseInt(document.querySelector('#single-tea-price').textContent)
+let teaPercentageConsumption = parseFloat(document.querySelector('#tea-percentage-consumption').textContent)
+let teaDayConsumption = parseFloat(document.querySelector('#tea-day-consumption').textContent)
+let singleTeaPrice = parseFloat(document.querySelector('#single-tea-price').textContent)
 let teaPrice = 0
 
 		// Snacks
 let subSnacks = document.querySelector('#sub-snacks')
 const subSnacksYes = document.querySelector('#sub-snacks-yes')
 const subSnacksNo = document.querySelector('#sub-snacks-no')
-let snacksPricePerKg = parseInt(document.querySelector('#snacks-price-per-kg').textContent)
+let snacksPricePerKg = parseFloat(document.querySelector('#snacks-price-per-kg').textContent)
 let snacksPriceTotal = 0
 
 		// Fruits
@@ -66,7 +66,7 @@ const subFruitsOptions = document.querySelector('#sub-fruits_options')
 const lundiRadioButton = document.querySelector('#fruits-lundi')
 const mardiRadioButton = document.querySelector('#fruits-mardi')
 const peuImporteRadioButton = document.querySelector('#fruits-peu-importe')
-let fruitsPricePerKg = parseInt(document.querySelector('#fruits-price-per-kg').textContent)
+let fruitsPricePerKg = parseFloat(document.querySelector('#fruits-price-per-kg').textContent)
 let fruitsPriceTotal = 0
 
 		// Service
@@ -88,7 +88,7 @@ const borneGlass = document.querySelector('#born-glass')
 let borneGlassCheck = document.querySelector('#born-glass-check')
 const borneDib = document.querySelector('#born-dib')
 let borneDibCheck = document.querySelector('#born-dib-check')
-let collectPrice = parseInt(document.querySelector('#collect-price').textContent)
+let collectPrice = parseFloat(document.querySelector('#collect-price').textContent)
 let collectPriceTotal = 0
 
 
@@ -96,11 +96,11 @@ let collectPriceTotal = 0
 
 let nSalaries = document.querySelector('#n-salarie')
 let nSalariesPresents = 0
-const daysWorkYear = parseInt(document.querySelector('#days-work-year').textContent)
+const daysWorkYear = parseFloat(document.querySelector('#days-work-year').textContent)
 const daysWorkMonth = daysWorkYear / 12
 const jourTravail = document.querySelector('#jour-travail')
 const pointConso = document.querySelector('#point-conso')
-const addedCostFirstSubscribe = parseInt(document.querySelector('#added-cost-first-subscribe').textContent)
+const addedCostFirstSubscribe = parseFloat(document.querySelector('#added-cost-first-subscribe').textContent)
 
 // Functions add & remove d-none
 const addDnone = (element) => {
@@ -114,7 +114,7 @@ const removeDnone = (element) => {
 // Moving throught the form
 nextButton.addEventListener('click', () => {
 	 if(indexSlide < 1) {
-    nSalariesPresents = parseInt(nSalaries.value) * (5 - parseInt(jourTravail.value)) / 5
+    nSalariesPresents = parseFloat(nSalaries.value) * (5 - parseInt(jourTravail.value)) / 5
     console.log(nSalariesPresents)
   }
 
