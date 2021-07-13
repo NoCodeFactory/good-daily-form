@@ -201,20 +201,12 @@ teaVrac.addEventListener('click', () => {
 	teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
     resumeTeaPrice.textContent = Math.round(teaPrice * 100) / 100
 	resumeTeaText.textContent = "vrac"
-
-    if(teaPrice === "NaN"){
-        teaPrice = 0
-    }
 })
 
 teaSachets.addEventListener('click', () => {
 	teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
     resumeTeaPrice.textContent = Math.round(teaPrice * 100) / 100
 	resumeTeaText.textContent = "sachets"
-
-    if(teaPrice === "NaN"){
-        teaPrice = 0
-    }
 })
 
 // Snacks functions
