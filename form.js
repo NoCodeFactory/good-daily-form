@@ -378,9 +378,9 @@ bornePaperCardboard.addEventListener('click', () => {
     bornePaperCardboardCheck.checked = !bornePaperCardboardCheck.checked
     
     if(bornePaperCardboardCheck.checked === true) {
-        resumeServiceText.textContent += 'Borne déchets papier - carton'
+        resumeServiceText.textContent + 'Borne déchets papier - carton'
     } else {
-        resumeServiceText.textContent -= 'Borne déchets papier - carton'
+        resumeServiceText.textContent - 'Borne déchets papier - carton'
     }
 
     if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
@@ -393,9 +393,9 @@ bornePlastic.addEventListener('click', () => {
     bornePlasticCheck.checked = !bornePlasticCheck.checked
 
     if(bornePlasticCheck.checked === true) {
-        resumeServiceText.textContent += 'Borne déchets plastique'
+        resumeServiceText.textContent + 'Borne déchets plastique'
     } else {
-        resumeServiceText.textContent -= 'Borne déchets plastique'
+        resumeServiceText.textContent - 'Borne déchets plastique'
     }
 
     if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
@@ -408,9 +408,9 @@ borneCan.addEventListener('click', () => {
     borneCanCheck.checked = !borneCanCheck.checked
 
     if(borneCanCheck.checked === true) {
-        resumeServiceText.textContent += 'Borne déchets canettes'
+        resumeServiceText.textContent + 'Borne déchets canettes'
     } else {
-        resumeServiceText.textContent -= 'Borne déchets canettes'
+        resumeServiceText.textContent - 'Borne déchets canettes'
     }
 
     if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
@@ -423,9 +423,9 @@ borneGlass.addEventListener('click', () => {
     borneGlassCheck.checked = !borneGlassCheck.checked
 
     if(borneGlassCheck.checked === true) {
-        resumeServiceText.textContent += 'Borne déchets verre'
+        resumeServiceText.textContent + 'Borne déchets verre'
     } else {
-        resumeServiceText.textContent -= 'Borne déchets verre'
+        resumeServiceText.textContent - 'Borne déchets verre'
     }
 
     if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
@@ -438,9 +438,9 @@ borneDib.addEventListener('click', () => {
     borneDibCheck.checked = !borneDibCheck.checked
 
     if(borneDibCheck.checked === true) {
-        resumeServiceText.textContent += 'Borne déchets DIB (Tout Venant)'
+        resumeServiceText.textContent + 'Borne déchets DIB (Tout Venant)'
     } else {
-        resumeServiceText.textContent -= 'Borne déchets DIB (Tout Venant)'
+        resumeServiceText.textContent - 'Borne déchets DIB (Tout Venant)'
     }
 
     if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
