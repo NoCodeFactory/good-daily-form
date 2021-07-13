@@ -28,7 +28,13 @@ let resumeFruitsText = document.querySelector('#resume-fruits-text')
 let resumeFruitsDay = document.querySelector('#resume-fruits-day')
 const contentService = document.querySelector('#content-service')
 let resumeServicePrice = document.querySelector('#resume-service-price')
-let resumeServiceText = document.querySelector('#resume-service-text')
+let resumeServiceSubOptionCoffee = document.querySelector('#resume-service-option-coffee')
+let resumeServiceSubOptionCaps = document.querySelector('#resume-service-option-caps')
+let resumeServiceSubOptionPaperCardboard = document.querySelector('#resume-service-option-paper-cardboard')
+let resumeServiceSubOptionPlastic = document.querySelector('#resume-service-option-plastic')
+let resumeServiceSubOptionCan = document.querySelector('#resume-service-option-can')
+let resumeServiceSubOptionGlass = document.querySelector('#resume-service-option-glass')
+let resumeServiceSubOptionDib = document.querySelector('#resume-service-option-dib')
 
 		// Coffee
 let subCoffee = document.querySelector('#sub-coffee')
@@ -378,9 +384,9 @@ bornePaperCardboard.addEventListener('click', () => {
     bornePaperCardboardCheck.checked = !bornePaperCardboardCheck.checked
     
     if(bornePaperCardboardCheck.checked === true) {
-        resumeServiceText.textContent + 'Borne déchets papier - carton'
+        removeDnone(resumeServiceSubOptionPaperCardboard)
     } else {
-        resumeServiceText.textContent - 'Borne déchets papier - carton'
+        addDnone(resumeServiceSubOptionPaperCardboard)
     }
 
     if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
@@ -393,9 +399,9 @@ bornePlastic.addEventListener('click', () => {
     bornePlasticCheck.checked = !bornePlasticCheck.checked
 
     if(bornePlasticCheck.checked === true) {
-        resumeServiceText.textContent + 'Borne déchets plastique'
+        removeDnone(resumeServiceSubOptionPlastic)
     } else {
-        resumeServiceText.textContent - 'Borne déchets plastique'
+        addDnone(resumeServiceSubOptionPlastic)
     }
 
     if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
@@ -408,9 +414,9 @@ borneCan.addEventListener('click', () => {
     borneCanCheck.checked = !borneCanCheck.checked
 
     if(borneCanCheck.checked === true) {
-        resumeServiceText.textContent + 'Borne déchets canettes'
+        removeDnone(resumeServiceSubOptionCan)
     } else {
-        resumeServiceText.textContent - 'Borne déchets canettes'
+        addDnone(resumeServiceSubOptionCan)
     }
 
     if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
@@ -423,9 +429,9 @@ borneGlass.addEventListener('click', () => {
     borneGlassCheck.checked = !borneGlassCheck.checked
 
     if(borneGlassCheck.checked === true) {
-        resumeServiceText.textContent + 'Borne déchets verre'
+        removeDnone(resumeServiceSubOptionGlass)
     } else {
-        resumeServiceText.textContent - 'Borne déchets verre'
+        addDnone(resumeServiceSubOptionGlass)
     }
 
     if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
@@ -438,9 +444,9 @@ borneDib.addEventListener('click', () => {
     borneDibCheck.checked = !borneDibCheck.checked
 
     if(borneDibCheck.checked === true) {
-        resumeServiceText.textContent + 'Borne déchets DIB (Tout Venant)'
+        removeDnone(resumeServiceSubOptionDib)
     } else {
-        resumeServiceText.textContent - 'Borne déchets DIB (Tout Venant)'
+        addDnone(resumeServiceSubOptionDib)
     }
 
     if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
