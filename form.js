@@ -108,6 +108,7 @@ nextButton.addEventListener('click', () => {
 	 if(indexSlide < 1) {
     nSalariesPresents = parseInt(nSalaries.value) * (5 - parseInt(jourTravail.value)) / 5
     console.log(nSalariesPresents)
+    console.log(nSalaries)
   }
 
   if(indexSlide < 5) {
