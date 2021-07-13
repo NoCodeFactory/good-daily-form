@@ -73,7 +73,6 @@ let fruitsPriceTotal = 0
 let subService = document.querySelector('#sub-service')
 const subServiceYes = document.querySelector('#sub-service-yes')
 const subServiceNo = document.querySelector('#sub-service-no')
-const contentService = document.querySelector('#content-service')
 const subSerivceOptions = document.querySelector('#sub-service_options')
 const borneCoffee = document.querySelector('#born-coffee')
 const borneCaps = document.querySelector('#born-caps')
