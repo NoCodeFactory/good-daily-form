@@ -211,7 +211,7 @@ subTeaYes.addEventListener('click', () => {
     resumeTeaPrice.textContent = teaPrice
 
     if(securityPriceTea === false) {
-        addedSubPrice + (Math.round(teaPrice * 100) / 100)
+        addedSubPrice + teaPrice
         securityPriceTea = true
     }
 })
@@ -222,7 +222,7 @@ subTeaNo.addEventListener('click', () => {
     subTea.textContent = "Non"
 
     // Reset selected when Yes
-    addedSubPrice - (Math.round(teaPrice * 100) / 100)
+    addedSubPrice - teaPrice
     teaPrice = 0
     securityPriceTea = false
 })
