@@ -16,6 +16,12 @@ const messageServiceCheck = document.querySelector('#message-service-check')
   // Content resume variables
 const aboResume = document.querySelector('#subscription-resume')
 let singlePrice = document.querySelector('#single-price')
+let addedSubPrice = 0
+let securityPriceCoffee = false
+let securityPriceTea = false
+let securityPriceSnacks = false
+let securityPriceFruits = false
+let securityPriceService = false
 const contentTea = document.querySelector('#content-tea')
 let resumeTeaPrice = document.querySelector('#resume-tea-price')
 let resumeTeaText = document.querySelector('#resume-tea-text')
@@ -137,7 +143,8 @@ nextButton.addEventListener('click', () => {
   removeDnone(aboResume)
 	}
 
-    singlePrice.textContent = parseFloat((resumeTeaPrice.textContent + resumeSnacksPrice.textContent + resumeFruitsPrice.textContent + resumeFruitsPrice.textContent) / parseInt(nSalaries.value) * daysWorkMonth)
+
+    singlePrice.textContent = addedSubPrice / parseInt(nSalaries.value) * daysWorkMonth
 
 })
 
@@ -198,6 +205,12 @@ subTeaYes.addEventListener('click', () => {
     removeDnone(contentTea)
     removeDnone(subTeaOptions)
     subTea.textContent = "Oui"
+
+    resumeTeaPrice.textContent = Math.round(teaPrice * 100) / 100
+    if(securityPriceTea === false) {
+        addedSubPrice + (Math.round(teaPrice * 100) / 100)
+        securityPriceTea = true
+    }
 })
 
 subTeaNo.addEventListener('click', () => {
@@ -206,18 +219,18 @@ subTeaNo.addEventListener('click', () => {
     subTea.textContent = "Non"
 
     // Reset selected when Yes
+    addedSubPrice - (Math.round(teaPrice * 100) / 100)
     teaPrice = 0
+    securityPriceTea = false
 })
 
 teaVrac.addEventListener('click', () => {
 	teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
-    resumeTeaPrice.textContent = Math.round(teaPrice * 100) / 100
 	resumeTeaText.textContent = "vrac"
 })
 
 teaSachets.addEventListener('click', () => {
 	teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
-    resumeTeaPrice.textContent = Math.round(teaPrice * 100) / 100
 	resumeTeaText.textContent = "sachets"
 })
 
@@ -258,13 +271,19 @@ subSnacksYes.addEventListener('click', () => {
     }
 
     resumeSnacksPrice.textContent = snacksPriceTotal
+    if(securityPriceSnacks === false) {
+        addedSubPrice + snacksPriceTotal
+        securityPriceSnacks = true
+    }
 })
 
 subSnacksNo.addEventListener('click', () => {
     addDnone(contentSnacks)
     subSnacks.textContent = "Non"
 
+    addedSubPrice - snacksPriceTotal
     snacksPriceTotal = 0
+    securityPriceSnacks = false
 })
 
 // Fruits functions
@@ -305,6 +324,10 @@ subFruitsYes.addEventListener('click', () => {
     }
 
     resumeFruitsPrice.textContent = fruitsPriceTotal
+    if(securityPriceFruits === false) {
+        addedSubPrice + fruitsPriceTotal
+        securityPriceFruits = true
+    }
 })
 
 lundiRadioButton.addEventListener('click', () => {
@@ -324,7 +347,9 @@ subFruitsNo.addEventListener('click', () => {
     addDnone(subFruitsOptions)
     subFruits.textContent = "Non"
 
+    addedSubPrice - fruitsPriceTotal
     fruitsPriceTotal = 0
+    securityPriceFruits = false
     mondayCheck.checked = false
     tuesdayCheck.checked = false
     noneCheck.checked = false
@@ -374,12 +399,21 @@ subServiceYes.addEventListener('click', () => {
         }
         resumeServicePrice.textContent = collectPriceTotal
     }
+
+    if(securityPriceService === false) {
+        addedSubPrice + collectPriceTotal
+        securityPriceService = true
+    }
 })
 
 subServiceNo.addEventListener('click', () => {
     addDnone(contentService)
     addDnone(subSerivceOptions)
     subService.textContent = "Non"
+
+    addedSubPrice - collectPriceTotal
+    collectPriceTotal = 0
+    securityPriceService = false
 })
 
 bornePaperCardboard.addEventListener('click', () => {
