@@ -15,6 +15,7 @@ const messageServiceCheck = document.querySelector('#message-service-check')
 	
   // Content resume variables
 const aboResume = document.querySelector('#subscription-resume')
+let subscriptionPrice = document.querySelector('#subscription-price')
 let singlePrice = document.querySelector('#single-price')
 let addedSubPrice = 0
 let securityPriceCoffee = false
@@ -209,6 +210,7 @@ subTeaYes.addEventListener('click', () => {
 
     if(securityPriceTea === false) {
         addedSubPrice = addedSubPrice += teaPrice
+        subscriptionPrice.textContent = addedSubPrice
         singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
         securityPriceTea = true
     }
@@ -221,6 +223,7 @@ subTeaNo.addEventListener('click', () => {
 
     // Reset selected when Yes
     addedSubPrice = addedSubPrice -= teaPrice
+    subscriptionPrice.textContent = addedSubPrice
     singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
     teaPrice = 0
     securityPriceTea = false
@@ -273,6 +276,7 @@ subSnacksYes.addEventListener('click', () => {
     resumeSnacksPrice.textContent = snacksPriceTotal
     if(securityPriceSnacks === false) {
         addedSubPrice = addedSubPrice += snacksPriceTotal
+        subscriptionPrice.textContent = addedSubPrice
         singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
         securityPriceSnacks = true
     }
@@ -283,6 +287,7 @@ subSnacksNo.addEventListener('click', () => {
     subSnacks.textContent = "Non"
 
     addedSubPrice = addedSubPrice -= snacksPriceTotal
+    subscriptionPrice.textContent = addedSubPrice
     singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
     snacksPriceTotal = 0
     securityPriceSnacks = false
@@ -328,6 +333,7 @@ subFruitsYes.addEventListener('click', () => {
     resumeFruitsPrice.textContent = fruitsPriceTotal
     if(securityPriceFruits === false) {
         addedSubPrice = addedSubPrice += fruitsPriceTotal
+        subscriptionPrice.textContent = addedSubPrice
         singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
         securityPriceFruits = true
     }
@@ -351,6 +357,7 @@ subFruitsNo.addEventListener('click', () => {
     subFruits.textContent = "Non"
 
     addedSubPrice = addedSubPrice -= fruitsPriceTotal
+    subscriptionPrice.textContent = addedSubPrice
     singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
     fruitsPriceTotal = 0
     securityPriceFruits = false
@@ -407,6 +414,7 @@ subServiceYes.addEventListener('click', () => {
 
     if(securityPriceService === false) {
         addedSubPrice = addedSubPrice += collectPriceTotal
+        subscriptionPrice.textContent = addedSubPrice
         singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
         securityPriceService = true
     }
@@ -418,6 +426,7 @@ subServiceNo.addEventListener('click', () => {
     subService.textContent = "Non"
 
     addedSubPrice = addedSubPrice -= collectPriceTotal
+    subscriptionPrice.textContent = addedSubPrice
     singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
     collectPriceTotal = 0
     securityPriceService = false
