@@ -76,9 +76,9 @@ let coffeePrice = 0
     // Machine
 const machineYes = document.querySelector('#machine-yes')
 const machineNo = document.querySelector('#machine-no')
-let machineCoffeeS = parseFloat(document.querySelector('#machine-coffe-s').textContent)
-let machineCoffeeM = parseFloat(document.querySelector('#machine-coffe-m').textContent)
-let machineCoffeeL = parseFloat(document.querySelector('#machine-coffe-l').textContent)
+let machineCoffeeS = parseFloat(document.querySelector('#machine-coffee-s').textContent)
+let machineCoffeeM = parseFloat(document.querySelector('#machine-coffee-m').textContent)
+let machineCoffeeL = parseFloat(document.querySelector('#machine-coffee-l').textContent)
 let machineCoffeeCaps = parseFloat(document.querySelector('#machine-coffee-caps').textContent)
 let machinePrice = 0
 
