@@ -245,7 +245,7 @@ subCoffeeNo.addEventListener('click', () => {
 
 coffeeGrain.addEventListener('click', () => {
 
-  if(coffeeGrainChecked === true || coffeeCapsChecked === true && machineYesChecked === true) {
+  if(machineYesChecked === true) {
       machineNo.click()
       machineNoChecked = true
       machineYesChecked = false
@@ -276,7 +276,7 @@ coffeeGrain.addEventListener('click', () => {
 
 coffeeCapsules.addEventListener('click', () => {
 
-  if(coffeeGrainChecked === true || coffeeCapsChecked === true && machineYesChecked === true) {
+  if(machineYesChecked === true) {
     machineNo.click()
     machineNoChecked = true
     machineYesChecked = false
