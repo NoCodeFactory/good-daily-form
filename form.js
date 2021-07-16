@@ -384,7 +384,7 @@ machineYes.addEventListener('click', () => {
 
 machineNo.addEventListener('click', () => {
   machineNoChecked = true
-  machineTrueChecked = false
+  machineYesChecked = false
   deductToPrice(machinePrice)
   coffeePrice -= machinePrice
   resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
