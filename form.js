@@ -18,11 +18,15 @@ const aboResume = document.querySelector('#subscription-resume')
 let subscriptionPrice = document.querySelector('#subscription-price')
 let singlePrice = document.querySelector('#single-price')
 let addedSubPrice = 0
-let securityPriceCoffee = false
+let securityPriceCoffeeGrain = false
+let securityPriceCoffeeCaps = false
 let securityPriceTea = false
 let securityPriceSnacks = false
 let securityPriceFruits = false
 let securityPriceService = false
+const contentCoffee = document.querySelector('#content-coffee')
+let resumeCoffeePrice = document.querySelector('#resume-coffee-price')
+let resumeCoffeeText = document.querySelector('#resume-coffee-text')
 const contentTea = document.querySelector('#content-tea')
 let resumeTeaPrice = document.querySelector('#resume-tea-price')
 let resumeTeaText = document.querySelector('#resume-tea-text')
@@ -50,6 +54,24 @@ const contentCoffee = document.querySelector('#content-coffee')
 const subCoffeeYes = document.querySelector('#sub-coffee-yes')
 const subCoffeeNo = document.querySelector('#sub-coffee-no')
 const subCoffeeOptions = document.querySelector('#sub-coffee_options')
+const coffeeGrain = document.querySelector('#coffee-grain')
+const coffeeCapsules = document.querySelector('#coffee-capsules')
+const grain = document.querySelector('#grain')
+const capsules = document.querySelector('#capsules')
+const machineYesLabel = document.querySelector('#machine-yes-label')
+const machineYes = document.querySelector('#machine-yes')
+const machineNoLabel = document.querySelector('#machine-no-label')
+const machineNo = document.querySelector('#machine-no')
+const addsCoffeeYes = document.querySelector('#adds-coffee-yes')
+const addsYes = document.querySelector('#adds-yes')
+const addsCoffeeNo = document.querySelector('#adds-coffee-no')
+const addsNo = document.querySelector('#adds-no')
+let coffeeDayConsumption = parseFloat(document.querySelector('#coffee-day-consumption').textContent)
+let coffeePricePerKg = parseFloat(document.querySelector('#coffee-price-per-kg').textContent)
+let coffeeConsumptionPerkg = parseFloat(document.querySelector('#coffee-consumption-per-kg').textContent)
+let coffeePriceCaps = parseFloat(document.querySelector('#coffee-price-caps').textContent)
+let coffeePrice = 0
+
 
 		// Tea
 let subTea = document.querySelector('#sub-tea')
@@ -128,6 +150,20 @@ const removeDnone = (element) => {
 	element.classList.remove('d-none')
 }
 
+// Adding the current price to the total price
+const addingToPrice = (currentPrice) => {
+    addedSubPrice = addedSubPrice += currentPrice
+    subscriptionPrice.textContent = addedSubPrice.toFixed(2)
+    singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
+}
+
+//  Deduct the current price from the total price
+const deductToPrice = (currentPrice) => {
+    addedSubPrice = addedSubPrice -= currentPrice
+    subscriptionPrice.textContent = addedSubPrice.toFixed(2)
+    singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
+}
+
 // Moving throught the form
 nextButton.addEventListener('click', () => {
     if(indexSlide < 1) {
@@ -198,6 +234,36 @@ subCoffeeNo.addEventListener('click', () => {
     subCoffee.textContent = "Non"
 })
 
+coffeeGrain.addEventListener('click', () => {
+  coffeePrice = 0
+  securityPriceCoffeeCaps = false
+
+  coffeePrice = coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
+
+  resumeCoffeePrice.textContent = coffeePrice
+
+  if(securityPriceCoffeeGrain === false) {
+    addingToPrice(coffeePrice)
+    securityPriceCoffeeGrain = true
+  }
+
+})
+
+coffeeCapsules.addEventListener('click', () => {
+  coffeePrice = 0
+  securityPriceCoffeeGrain = false
+
+  coffeePrice = coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
+
+  resumeCoffeePrice.textContent = coffeePrice
+
+  if(securityPriceCoffeeCaps === false) {
+    addingToPrice(coffeePrice)
+    securityPriceCoffeeCaps = true
+  }
+
+})
+
 // Tea functions
 
 subTeaYes.addEventListener('click', () => {
@@ -210,9 +276,7 @@ subTeaYes.addEventListener('click', () => {
     resumeTeaPrice.textContent = teaPrice
 
     if(securityPriceTea === false) {
-        addedSubPrice = addedSubPrice += teaPrice
-        subscriptionPrice.textContent = addedSubPrice.toFixed(2)
-        singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
+        addingToPrice(teaPrice)
         securityPriceTea = true
     }
 })
@@ -223,9 +287,7 @@ subTeaNo.addEventListener('click', () => {
     subTea.textContent = "Non"
 
     // Reset selected when Yes
-    addedSubPrice = addedSubPrice -= teaPrice
-    subscriptionPrice.textContent = addedSubPrice.toFixed(2)
-    singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
+    deductToPrice(teaPrice)
     teaPrice = 0
     securityPriceTea = false
 })
@@ -276,9 +338,7 @@ subSnacksYes.addEventListener('click', () => {
 
     resumeSnacksPrice.textContent = snacksPriceTotal
     if(securityPriceSnacks === false) {
-        addedSubPrice = addedSubPrice += snacksPriceTotal
-        subscriptionPrice.textContent = addedSubPrice.toFixed(2)
-        singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
+        addingToPrice(snacksPriceTotal)
         securityPriceSnacks = true
     }
 })
@@ -287,9 +347,7 @@ subSnacksNo.addEventListener('click', () => {
     addDnone(contentSnacks)
     subSnacks.textContent = "Non"
 
-    addedSubPrice = addedSubPrice -= snacksPriceTotal
-    subscriptionPrice.textContent = addedSubPrice.toFixed(2)
-    singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
+    deductToPrice(snacksPriceTotal)
     snacksPriceTotal = 0
     securityPriceSnacks = false
 })
@@ -298,58 +356,58 @@ subSnacksNo.addEventListener('click', () => {
 
 subFruitsYes.addEventListener('click', () => {
     removeDnone(contentFruits)
-    removeDnone(contentFruitsDelivery)
     removeDnone(subFruitsOptions)
     subFruits.textContent = "Oui"
 
     if(nSalariesPresents <= 15) {
         fruitsPriceTotal = fruitsPricePerKg * 3 + addedCostFirstSubscribe
-        resumeFruitsText.textContent = "(3Kg)"
+        resumeFruitsText.textContent = "3Kg"
     }
 
     if(nSalariesPresents >= 16 && nSalariesPresents <= 30) {
         fruitsPriceTotal = fruitsPricePerKg * 6 * 4
-        resumeFruitsText.textContent = "(6Kg)"
+        resumeFruitsText.textContent = "6Kg"
     }
 
     if(nSalariesPresents >= 31 && nSalariesPresents <= 45) {
         fruitsPriceTotal = fruitsPricePerKg * 9 * 4
-        resumeFruitsText.textContent = "(9Kg)"
+        resumeFruitsText.textContent = "9Kg"
     }
 
     if(nSalariesPresents >= 46 && nSalariesPresents <= 60) {
         fruitsPriceTotal = fruitsPricePerKg * 12 * 4
-        resumeFruitsText.textContent = "(12Kg)"
+        resumeFruitsText.textContent = "12Kg"
     }
 
     if(nSalariesPresents >= 61 && nSalariesPresents <= 75) {
         fruitsPriceTotal = fruitsPricePerKg * 15 * 4
-        resumeFruitsText.textContent = "(15Kg)"
+        resumeFruitsText.textContent = "15Kg"
     }
 
     if(nSalariesPresents >= 76) {
         fruitsPriceTotal = fruitsPricePerKg * 18 * 4
-        resumeFruitsText.textContent = "(18Kg)"
+        resumeFruitsText.textContent = "18Kg"
     }
 
     resumeFruitsPrice.textContent = fruitsPriceTotal
     if(securityPriceFruits === false) {
-        addedSubPrice = addedSubPrice += fruitsPriceTotal
-        subscriptionPrice.textContent = addedSubPrice.toFixed(2)
-        singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
+        addingToPrice(fruitsPriceTotal)
         securityPriceFruits = true
     }
 })
 
 lundiRadioButton.addEventListener('click', () => {
+    removeDnone(contentFruitsDelivery)
     resumeFruitsDay.textContent = "lundi"
 })
 
 mardiRadioButton.addEventListener('click', () => {
+    removeDnone(contentFruitsDelivery)
     resumeFruitsDay.textContent = "mardi"
 })
 
 peuImporteRadioButton.addEventListener('click', () => {
+    removeDnone(contentFruitsDelivery)
     resumeFruitsDay.textContent = "lundi ou mardi"
 })
 
@@ -359,9 +417,7 @@ subFruitsNo.addEventListener('click', () => {
     addDnone(subFruitsOptions)
     subFruits.textContent = "Non"
 
-    addedSubPrice = addedSubPrice -= fruitsPriceTotal
-    subscriptionPrice.textContent = addedSubPrice.toFixed(2)
-    singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
+    deductToPrice(fruitsPriceTotal)
     fruitsPriceTotal = 0
     securityPriceFruits = false
 
@@ -416,9 +472,7 @@ subServiceYes.addEventListener('click', () => {
     }
 
     if(securityPriceService === false) {
-        addedSubPrice = addedSubPrice += collectPriceTotal
-        subscriptionPrice.textContent = addedSubPrice.toFixed(2)
-        singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
+        addingToPrice(collectPriceTotal)
         securityPriceService = true
     }
 })
@@ -428,9 +482,7 @@ subServiceNo.addEventListener('click', () => {
     addDnone(subSerivceOptions)
     subService.textContent = "Non"
 
-    addedSubPrice = addedSubPrice -= collectPriceTotal
-    subscriptionPrice.textContent = addedSubPrice.toFixed(2)
-    singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
+    deductToPrice(collectPriceTotal)
     collectPriceTotal = 0
     securityPriceService = false
 })
