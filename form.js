@@ -50,7 +50,6 @@ let resumeServiceSubOptionDib = document.querySelector('#resume-service-option-d
 
 		// Coffee
 let subCoffee = document.querySelector('#sub-coffee')
-const contentCoffee = document.querySelector('#content-coffee')
 const subCoffeeYes = document.querySelector('#sub-coffee-yes')
 const subCoffeeNo = document.querySelector('#sub-coffee-no')
 const subCoffeeOptions = document.querySelector('#sub-coffee_options')
