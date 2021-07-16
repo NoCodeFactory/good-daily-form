@@ -30,6 +30,7 @@ const contentSnacks = document.querySelector('#content-snacks')
 let resumeSnacksPrice = document.querySelector('#resume-snacks-price')
 let resumeSnacksText = document.querySelector('#resume-snacks-text')
 const contentFruits = document.querySelector('#content-fruits')
+const contentFruitsDelivery = document.querySelector('#content-fruits-delivery')
 let resumeFruitsPrice = document.querySelector('#resume-fruits-price')
 let resumeFruitsText = document.querySelector('#resume-fruits-text')
 let resumeFruitsDay = document.querySelector('#resume-fruits-day')
@@ -297,6 +298,7 @@ subSnacksNo.addEventListener('click', () => {
 
 subFruitsYes.addEventListener('click', () => {
     removeDnone(contentFruits)
+    removeDnone(contentFruitsDelivery)
     removeDnone(subFruitsOptions)
     subFruits.textContent = "Oui"
 
@@ -353,6 +355,7 @@ peuImporteRadioButton.addEventListener('click', () => {
 
 subFruitsNo.addEventListener('click', () => {
     addDnone(contentFruits)
+    addDnone(contentFruitsDelivery)
     addDnone(subFruitsOptions)
     subFruits.textContent = "Non"
 
