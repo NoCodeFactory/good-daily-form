@@ -253,7 +253,7 @@ coffeeGrain.addEventListener('click', () => {
     coffeeCapsPrice = 0
 
     coffeePrice = coffeeGrainPrice
-    resumeCoffeePrice.textContent = coffeePrice
+    resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
 
     addingToPrice(coffeePrice)
     securityPriceCoffeeGrain = true
@@ -273,7 +273,7 @@ coffeeCapsules.addEventListener('click', () => {
     coffeeGrainPrice = 0
 
     coffeePrice = coffeeCapsPrice
-    resumeCoffeePrice.textContent = coffeePrice
+    resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
 
     addingToPrice(coffeePrice)
     securityPriceCoffeeCaps = true
@@ -358,7 +358,7 @@ machineYes.addEventListener('click', () => {
   
   if(securityPriceMachine === false) {
     coffeePrice += machinePrice
-    resumeCoffeePrice.textContent = coffeePrice
+    resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
     addingToPrice(machinePrice)
     securityPriceMachine = true
   }
@@ -367,7 +367,7 @@ machineYes.addEventListener('click', () => {
 machineNo.addEventListener('click', () => {
   deductToPrice(machinePrice)
   coffeePrice -= machinePrice
-  resumeCoffeePrice.textContent = coffeePrice
+  resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
   machinePrice = 0
   securityPriceMachine = false
 })
@@ -378,7 +378,7 @@ addsCoffeeYes.addEventListener('click', () => {
   
   if(securityPriceCoffeeAdds === false) {
     coffeePrice += addsPriceTotal
-    resumeCoffeePrice.textContent = coffeePrice
+    resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
 
     addingToPrice(addsPriceTotal)
     securityPriceCoffeeAdds = true
@@ -388,7 +388,7 @@ addsCoffeeYes.addEventListener('click', () => {
 addsCoffeeNo.addEventListener('click', () => {
   deductToPrice(addsPriceTotal)
   coffeePrice -= addsPriceTotal
-  resumeCoffeePrice.textContent = coffeePrice
+  resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
   addsPriceTotal = 0
   securityPriceCoffeeAdds = false
 })
