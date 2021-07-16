@@ -340,15 +340,15 @@ subFruitsYes.addEventListener('click', () => {
 })
 
 lundiRadioButton.addEventListener('click', () => {
-    resumeFruitsText.textContent = "Livré le Lundi"
+    resumeFruitsText.textContent = "lundi"
 })
 
 mardiRadioButton.addEventListener('click', () => {
-    resumeFruitsText.textContent = "Livré le mardi"
+    resumeFruitsText.textContent = "mardi"
 })
 
 peuImporteRadioButton.addEventListener('click', () => {
-    resumeFruitsText.textContent = "Livré le Lundi ou Mardi"
+    resumeFruitsText.textContent = "lundi ou mardi"
 })
 
 subFruitsNo.addEventListener('click', () => {
