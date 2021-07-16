@@ -243,37 +243,41 @@ subCoffeeNo.addEventListener('click', () => {
 
 coffeeGrain.addEventListener('click', () => {
 
-  deductToPrice(coffeeCapsPrice)
   coffeeGrainChecked = true
   coffeeCapsChecked = false
-
+  
   coffeeGrainPrice = coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
-
-  coffeePrice += coffeeGrainPrice
-
-  resumeCoffeePrice.textContent = coffeePrice
-
+  
   if(securityPriceCoffeeGrain === false) {
+    deductToPrice(coffeeCapsPrice)
+    coffeeCapsPrice = 0
+
+    coffeePrice = coffeeGrainPrice
+    resumeCoffeePrice.textContent = coffeePrice
+
     addingToPrice(coffeePrice)
     securityPriceCoffeeGrain = true
+    securityPriceCoffeeCaps = false
   }
 })
 
 coffeeCapsules.addEventListener('click', () => {
 
-  deductToPrice(coffeeGrainPrice)
   coffeeCapsChecked = true
   coffeeGrainChecked = false
 
   coffeeCapsPrice = coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
 
-  coffeePrice += coffeeCapsPrice
-
-  resumeCoffeePrice.textContent = coffeePrice
-
   if(securityPriceCoffeeCaps === false) {
+    deductToPrice(coffeeGrainPrice)
+    coffeeGrainPrice = 0
+
+    coffeePrice = coffeeCapsPrice
+    resumeCoffeePrice.textContent = coffeePrice
+
     addingToPrice(coffeePrice)
     securityPriceCoffeeCaps = true
+    securityPriceCoffeeGrain = false
   }
 })
 
@@ -351,11 +355,10 @@ machineYes.addEventListener('click', () => {
     }
   }
 
-  coffeePrice += machinePrice
-
-  resumeCoffeePrice.textContent = coffeePrice
-
+  
   if(securityPriceMachine === false) {
+    coffeePrice += machinePrice
+    resumeCoffeePrice.textContent = coffeePrice
     addingToPrice(machinePrice)
     securityPriceMachine = true
   }
@@ -369,13 +372,13 @@ machineNo.addEventListener('click', () => {
 })
 
 addsCoffeeYes.addEventListener('click', () => {
+  
   addsPriceTotal = coffeeDayConsumption * daysWorkMonth * addsPrice
-
-  coffeePrice += addsPriceTotal
-
-  resumeCoffeePrice.textContent = coffeePrice
-
+  
   if(securityPriceCoffeeAdds === false) {
+    coffeePrice += addsPriceTotal
+    resumeCoffeePrice.textContent = coffeePrice
+
     addingToPrice(addsPriceTotal)
     securityPriceCoffeeAdds = true
   }
