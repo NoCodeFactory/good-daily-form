@@ -161,14 +161,14 @@ const removeDnone = (element) => {
 
 // Adding the current price to the total price
 const addingToPrice = (currentPrice) => {
-    addedSubPrice = addedSubPrice + currentPrice
+    addedSubPrice = addedSubPrice += currentPrice
     subscriptionPrice.textContent = addedSubPrice.toFixed(2)
     singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
 }
 
 //  Deduct the current price from the total price
 const deductToPrice = (currentPrice) => {
-    addedSubPrice = addedSubPrice - currentPrice
+    addedSubPrice = addedSubPrice -= currentPrice
     subscriptionPrice.textContent = addedSubPrice.toFixed(2)
     singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
 }
@@ -260,6 +260,8 @@ coffeeGrain.addEventListener('click', () => {
   
   if(securityPriceCoffeeGrain === false) {
 
+    deductToPrice(coffeePrice)
+
     coffeePrice = coffeeGrainPrice
     resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
 
@@ -285,6 +287,8 @@ coffeeCapsules.addEventListener('click', () => {
   coffeeCapsPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
 
   if(securityPriceCoffeeCaps === false) {
+
+    deductToPrice(coffeePrice)
 
     coffeePrice = coffeeCapsPrice
     resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
