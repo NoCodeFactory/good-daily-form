@@ -209,8 +209,8 @@ subTeaYes.addEventListener('click', () => {
     resumeTeaPrice.textContent = teaPrice
 
     if(securityPriceTea === false) {
-        addedSubPrice = addedSubPrice += teaPrice.toFixed(2)
-        subscriptionPrice.textContent = addedSubPrice
+        addedSubPrice = addedSubPrice += teaPrice
+        subscriptionPrice.textContent = addedSubPrice.toFixed(2)
         singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
         securityPriceTea = true
     }
@@ -222,8 +222,8 @@ subTeaNo.addEventListener('click', () => {
     subTea.textContent = "Non"
 
     // Reset selected when Yes
-    addedSubPrice = addedSubPrice -= teaPrice.toFixed(2)
-    subscriptionPrice.textContent = addedSubPrice
+    addedSubPrice = addedSubPrice -= teaPrice
+    subscriptionPrice.textContent = addedSubPrice.toFixed(2)
     singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
     teaPrice = 0
     securityPriceTea = false
@@ -275,8 +275,8 @@ subSnacksYes.addEventListener('click', () => {
 
     resumeSnacksPrice.textContent = snacksPriceTotal
     if(securityPriceSnacks === false) {
-        addedSubPrice = addedSubPrice += snacksPriceTotal.toFixed(2)
-        subscriptionPrice.textContent = addedSubPrice
+        addedSubPrice = addedSubPrice += snacksPriceTotal
+        subscriptionPrice.textContent = addedSubPrice.toFixed(2)
         singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
         securityPriceSnacks = true
     }
@@ -286,8 +286,8 @@ subSnacksNo.addEventListener('click', () => {
     addDnone(contentSnacks)
     subSnacks.textContent = "Non"
 
-    addedSubPrice = addedSubPrice -= snacksPriceTotal.toFixed(2)
-    subscriptionPrice.textContent = addedSubPrice
+    addedSubPrice = addedSubPrice -= snacksPriceTotal
+    subscriptionPrice.textContent = addedSubPrice.toFixed(2)
     singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
     snacksPriceTotal = 0
     securityPriceSnacks = false
@@ -332,8 +332,8 @@ subFruitsYes.addEventListener('click', () => {
 
     resumeFruitsPrice.textContent = fruitsPriceTotal
     if(securityPriceFruits === false) {
-        addedSubPrice = addedSubPrice += fruitsPriceTotal.toFixed(2)
-        subscriptionPrice.textContent = addedSubPrice
+        addedSubPrice = addedSubPrice += fruitsPriceTotal
+        subscriptionPrice.textContent = addedSubPrice.toFixed(2)
         singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
         securityPriceFruits = true
     }
@@ -356,8 +356,8 @@ subFruitsNo.addEventListener('click', () => {
     addDnone(subFruitsOptions)
     subFruits.textContent = "Non"
 
-    addedSubPrice = addedSubPrice -= fruitsPriceTotal.toFixed(2)
-    subscriptionPrice.textContent = addedSubPrice
+    addedSubPrice = addedSubPrice -= fruitsPriceTotal
+    subscriptionPrice.textContent = addedSubPrice.toFixed(2)
     singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
     fruitsPriceTotal = 0
     securityPriceFruits = false
@@ -413,8 +413,8 @@ subServiceYes.addEventListener('click', () => {
     }
 
     if(securityPriceService === false) {
-        addedSubPrice = addedSubPrice += collectPriceTotal.toFixed(2)
-        subscriptionPrice.textContent = addedSubPrice
+        addedSubPrice = addedSubPrice += collectPriceTotal
+        subscriptionPrice.textContent = addedSubPrice.toFixed(2)
         singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
         securityPriceService = true
     }
@@ -425,8 +425,8 @@ subServiceNo.addEventListener('click', () => {
     addDnone(subSerivceOptions)
     subService.textContent = "Non"
 
-    addedSubPrice = addedSubPrice -= collectPriceTotal.toFixed(2)
-    subscriptionPrice.textContent = addedSubPrice
+    addedSubPrice = addedSubPrice -= collectPriceTotal
+    subscriptionPrice.textContent = addedSubPrice.toFixed(2)
     singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
     collectPriceTotal = 0
     securityPriceService = false
