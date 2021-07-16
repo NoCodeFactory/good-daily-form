@@ -245,7 +245,7 @@ subCoffeeNo.addEventListener('click', () => {
 
 coffeeGrain.addEventListener('click', () => {
 
-  addedSubPrice - coffeeCapsPrice
+  deductToPrice(coffeePrice)
   coffeeCapsPrice = 0
 
   if(machineYesChecked === true) {
@@ -271,7 +271,7 @@ coffeeGrain.addEventListener('click', () => {
 
 coffeeCapsules.addEventListener('click', () => {
 
-  addedSubPrice - coffeeGrainPrice
+  deductToPrice(coffeePrice)
   coffeeGrainPrice = 0
   
   if(machineYesChecked === true) {
