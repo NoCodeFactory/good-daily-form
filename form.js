@@ -249,6 +249,7 @@ coffeeGrain.addEventListener('click', () => {
     machineNo.click()
     securityPriceMachine = false
     machineYes.click()
+    resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
   }
 
   coffeeGrainChecked = true
@@ -276,6 +277,7 @@ coffeeCapsules.addEventListener('click', () => {
       machineNo.click()
       securityPriceMachine = false
       machineYes.click()
+      resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
     }
 
   coffeeCapsChecked = true
