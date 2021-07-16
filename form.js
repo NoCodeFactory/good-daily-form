@@ -398,7 +398,6 @@ machineNo.addEventListener('click', () => {
   deductToPrice(machinePrice)
   coffeePrice -= machinePrice
   resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
-  machinePrice = 0
   securityPriceMachine = false
 })
 
@@ -419,7 +418,6 @@ addsCoffeeNo.addEventListener('click', () => {
   deductToPrice(addsPriceTotal)
   coffeePrice -= addsPriceTotal
   resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
-  addsPriceTotal = 0
   securityPriceCoffeeAdds = false
 })
 
