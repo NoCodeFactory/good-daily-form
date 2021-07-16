@@ -248,6 +248,7 @@ coffeeGrain.addEventListener('click', () => {
   deductToPrice(coffeeCapsPrice)
 
   if(machineYesChecked === true) {
+    machineNo.click()
     securityPriceMachine = false
     machineYes.click()
   }
@@ -275,6 +276,7 @@ coffeeCapsules.addEventListener('click', () => {
   deductToPrice(coffeeGrainPrice)
   
   if(machineYesChecked === true) {
+      machineNo.click()
       securityPriceMachine = false
       machineYes.click()
     }
