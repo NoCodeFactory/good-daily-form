@@ -161,14 +161,14 @@ const removeDnone = (element) => {
 
 // Adding the current price to the total price
 const addingToPrice = (currentPrice) => {
-    addedSubPrice = addedSubPrice += currentPrice
+    addedSubPrice = addedSubPrice + currentPrice
     subscriptionPrice.textContent = addedSubPrice.toFixed(2)
     singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
 }
 
 //  Deduct the current price from the total price
 const deductToPrice = (currentPrice) => {
-    addedSubPrice = addedSubPrice -= currentPrice
+    addedSubPrice = addedSubPrice - currentPrice
     subscriptionPrice.textContent = addedSubPrice.toFixed(2)
     singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
 }
