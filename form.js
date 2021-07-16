@@ -248,11 +248,9 @@ coffeeGrain.addEventListener('click', () => {
   if(machineYesChecked === true) {
       machineNo.click()
       machineNoChecked = true
-      machineYesChecked = false
       if(machineNoChecked === true) {
         machineYes.click()
         machineYesChecked = true
-        machineNoChecked = false
       }
   }
 
@@ -279,11 +277,9 @@ coffeeCapsules.addEventListener('click', () => {
   if(machineYesChecked === true) {
     machineNo.click()
     machineNoChecked = true
-    machineYesChecked = false
     if(machineNoChecked === true) {
       machineYes.click()
       machineYesChecked = true
-      machineNoChecked = false
     }
 }
 
