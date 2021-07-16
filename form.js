@@ -246,15 +246,9 @@ subCoffeeNo.addEventListener('click', () => {
 coffeeGrain.addEventListener('click', () => {
 
   if(machineYesChecked === true) {
-      machineNo.click()
-      machineNoChecked = true
-      machineYesChecked = false
-      if(machineNoChecked === true) {
-        securityPriceMachine = false
-        machineYes.click()
-        machineYesChecked = true
-        machineNoChecked = false
-      }
+    securityPriceMachine = false
+    machineYes.click()
+    machineNoChecked = false
   }
 
   coffeeGrainChecked = true
@@ -278,16 +272,10 @@ coffeeGrain.addEventListener('click', () => {
 coffeeCapsules.addEventListener('click', () => {
 
   if(machineYesChecked === true) {
-    machineNo.click()
-    machineNoChecked = true
-    machineYesChecked = false
-    if(machineNoChecked === true) {
       securityPriceMachine = false
       machineYes.click()
-      machineYesChecked = true
       machineNoChecked = false
     }
-}
 
   coffeeCapsChecked = true
   coffeeGrainChecked = false
@@ -398,6 +386,7 @@ machineNo.addEventListener('click', () => {
   deductToPrice(machinePrice)
   coffeePrice -= machinePrice
   resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+  machinePrice = 0
   securityPriceMachine = false
 })
 
@@ -418,6 +407,7 @@ addsCoffeeNo.addEventListener('click', () => {
   deductToPrice(addsPriceTotal)
   coffeePrice -= addsPriceTotal
   resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+  addsPriceTotal = 0
   securityPriceCoffeeAdds = false
 })
 
