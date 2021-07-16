@@ -58,6 +58,8 @@ const subCoffeeOptions = document.querySelector('#sub-coffee_options')
 const coffeeGrain = document.querySelector('#coffee-grain')
 let coffeeGrainChecked = false
 let coffeeCapsChecked = false
+let machineYesChecked = false
+let machineNoChecked = false
 const coffeeCapsules = document.querySelector('#coffee-capsules')
 const grain = document.querySelector('#grain')
 const capsules = document.querySelector('#capsules')
@@ -243,6 +245,17 @@ subCoffeeNo.addEventListener('click', () => {
 
 coffeeGrain.addEventListener('click', () => {
 
+  if(coffeeGrainChecked === true || coffeeCapsChecked === true && machineYesChecked === true) {
+      machineNo.click()
+      machineNoChecked = true
+      machineYesChecked = false
+      if(machineNoChecked === true) {
+        machineYes.click()
+        machineYesChecked = true
+        machineNoChecked = false
+      }
+  }
+
   coffeeGrainChecked = true
   coffeeCapsChecked = false
   
@@ -263,6 +276,17 @@ coffeeGrain.addEventListener('click', () => {
 
 coffeeCapsules.addEventListener('click', () => {
 
+  if(coffeeGrainChecked === true || coffeeCapsChecked === true && machineYesChecked === true) {
+    machineNo.click()
+    machineNoChecked = true
+    machineYesChecked = false
+    if(machineNoChecked === true) {
+      machineYes.click()
+      machineYesChecked = true
+      machineNoChecked = false
+    }
+}
+
   coffeeCapsChecked = true
   coffeeGrainChecked = false
 
@@ -282,6 +306,9 @@ coffeeCapsules.addEventListener('click', () => {
 })
 
 machineYes.addEventListener('click', () => {
+
+  machineYesChecked = true
+
   if(nSalariesPresents <= 30) {
     
     if(pointConso.value === "1") {
@@ -365,6 +392,7 @@ machineYes.addEventListener('click', () => {
 })
 
 machineNo.addEventListener('click', () => {
+  machineNoChecked = true
   deductToPrice(machinePrice)
   coffeePrice -= machinePrice
   resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
@@ -374,7 +402,7 @@ machineNo.addEventListener('click', () => {
 
 addsCoffeeYes.addEventListener('click', () => {
 
-  addsPriceTotal = coffeeDayConsumption * daysWorkMonth * addsPrice
+  addsPriceTotal = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * addsPrice
   
   if(securityPriceCoffeeAdds === false) {
     coffeePrice += addsPriceTotal
