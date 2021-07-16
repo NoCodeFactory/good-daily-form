@@ -20,6 +20,8 @@ let singlePrice = document.querySelector('#single-price')
 let addedSubPrice = 0
 let securityPriceCoffeeGrain = false
 let securityPriceCoffeeCaps = false
+let securityPriceMachine = false
+let securityPriceCoffeeAdds = false
 let securityPriceTea = false
 let securityPriceSnacks = false
 let securityPriceFruits = false
@@ -54,23 +56,31 @@ const subCoffeeYes = document.querySelector('#sub-coffee-yes')
 const subCoffeeNo = document.querySelector('#sub-coffee-no')
 const subCoffeeOptions = document.querySelector('#sub-coffee_options')
 const coffeeGrain = document.querySelector('#coffee-grain')
+let coffeeGrainChecked = false
+let coffeeCapsChecked = false
 const coffeeCapsules = document.querySelector('#coffee-capsules')
 const grain = document.querySelector('#grain')
 const capsules = document.querySelector('#capsules')
-const machineYesLabel = document.querySelector('#machine-yes-label')
-const machineYes = document.querySelector('#machine-yes')
-const machineNoLabel = document.querySelector('#machine-no-label')
-const machineNo = document.querySelector('#machine-no')
 const addsCoffeeYes = document.querySelector('#adds-coffee-yes')
-const addsYes = document.querySelector('#adds-yes')
 const addsCoffeeNo = document.querySelector('#adds-coffee-no')
-const addsNo = document.querySelector('#adds-no')
 let coffeeDayConsumption = parseFloat(document.querySelector('#coffee-day-consumption').textContent)
 let coffeePricePerKg = parseFloat(document.querySelector('#coffee-price-per-kg').textContent)
 let coffeeConsumptionPerkg = parseFloat(document.querySelector('#coffee-consumption-per-kg').textContent)
 let coffeePriceCaps = parseFloat(document.querySelector('#coffee-price-caps').textContent)
+let addsPrice = parseFloat(document.querySelector('#adds-price').textContent)
+let addsPriceTotal = 0
+let coffeeGrainPrice = 0
+let coffeeCapsPrice = 0
 let coffeePrice = 0
 
+    // Machine
+const machineYes = document.querySelector('#machine-yes')
+const machineNo = document.querySelector('#machine-no')
+let machineCoffeeS = parseFloat(document.querySelector('#machine-coffe-s').textContent)
+let machineCoffeeM = parseFloat(document.querySelector('#machine-coffe-m').textContent)
+let machineCoffeeL = parseFloat(document.querySelector('#machine-coffe-l').textContent)
+let machineCoffeeCaps = parseFloat(document.querySelector('#machine-coffee-caps').textContent)
+let machinePrice = 0
 
 		// Tea
 let subTea = document.querySelector('#sub-tea')
@@ -79,8 +89,6 @@ const subTeaNo = document.querySelector('#sub-tea-no')
 const subTeaOptions = document.querySelector('#sub-tea_options')
 const teaVrac = document.querySelector('#tea-vrac')
 const teaSachets = document.querySelector('#tea-sachets')
-const vrac = document.querySelector('#vrac')
-const sachets = document.querySelector('#sachets')
 let teaPercentageConsumption = parseFloat(document.querySelector('#tea-percentage-consumption').textContent)
 let teaDayConsumption = parseFloat(document.querySelector('#tea-day-consumption').textContent)
 let singleTeaPrice = parseFloat(document.querySelector('#single-tea-price').textContent)
@@ -234,10 +242,14 @@ subCoffeeNo.addEventListener('click', () => {
 })
 
 coffeeGrain.addEventListener('click', () => {
-  coffeePrice = 0
-  securityPriceCoffeeCaps = false
 
-  coffeePrice = coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
+  deductToPrice(coffeeCapsPrice)
+  coffeeGrainChecked = true
+  coffeeCapsChecked = false
+
+  coffeeGrainPrice = coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
+
+  coffeePrice += coffeeGrainPrice
 
   resumeCoffeePrice.textContent = coffeePrice
 
@@ -245,14 +257,17 @@ coffeeGrain.addEventListener('click', () => {
     addingToPrice(coffeePrice)
     securityPriceCoffeeGrain = true
   }
-
 })
 
 coffeeCapsules.addEventListener('click', () => {
-  coffeePrice = 0
-  securityPriceCoffeeGrain = false
 
-  coffeePrice = coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
+  deductToPrice(coffeeGrainPrice)
+  coffeeCapsChecked = true
+  coffeeGrainChecked = false
+
+  coffeeCapsPrice = coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
+
+  coffeePrice += coffeeCapsPrice
 
   resumeCoffeePrice.textContent = coffeePrice
 
@@ -260,7 +275,117 @@ coffeeCapsules.addEventListener('click', () => {
     addingToPrice(coffeePrice)
     securityPriceCoffeeCaps = true
   }
+})
 
+machineYes.addEventListener('click', () => {
+  if(nSalariesPresents <= 30) {
+    
+    if(pointConso.value === "1") {
+      if(coffeeGrainChecked === true) {
+        machinePrice = machineCoffeeS * 1
+      } else {
+        machinePrice = machineCoffeeCaps * 1
+      }
+    }
+
+    if(pointConso.value === "2") {
+      if(coffeeGrainChecked === true) {
+        machinePrice = machineCoffeeS * 2
+      } else {
+        machinePrice = machineCoffeeCaps * 2
+      }
+    }
+    
+    if(pointConso.value === "3") {
+      if(coffeeGrainChecked === true) {
+        machinePrice = machineCoffeeS * 3
+      } else {
+        machinePrice = machineCoffeeCaps * 3
+      }
+    }
+  }
+
+  if(nSalariesPresents >= 31 && nSalariesPresents <= 60) {
+
+    if(pointConso.value === "1") {
+      if(coffeeGrainChecked === true) {
+        machinePrice = machineCoffeeM * 1
+      } else {
+        machinePrice = machineCoffeeCaps * 2
+      }
+    }
+
+    if(pointConso.value === "2") {
+      if(coffeeGrainChecked === true) {
+        machinePrice = machineCoffeeM * 2
+      } else {
+        machinePrice = machineCoffeeCaps * 3
+      }
+    }
+
+    if(pointConso.value === "3") {
+      if(coffeeGrainChecked === true) {
+        machinePrice = machineCoffeeM * 3
+      } else {
+        machinePrice = machineCoffeeCaps * 3
+      }
+    }
+  }
+
+  if(nSalariesPresents >= 61) {
+
+    if(pointConso.value === "1") {
+      if(coffeeGrainChecked === true) {
+        machinePrice = machineCoffeeL * 1
+      } else {
+        machinePrice = machineCoffeeCaps * 3
+      }
+    }
+
+    if(pointConso.value === "2") {
+      machinePrice = "hors scope"
+    }
+
+    if(pointConso.value === "3") {
+      machinePrice = "hors scope"
+    }
+  }
+
+  coffeePrice += machinePrice
+
+  resumeCoffeePrice.textContent = coffeePrice
+
+  if(securityPriceMachine === false) {
+    addingToPrice(machinePrice)
+    securityPriceMachine = true
+  }
+})
+
+machineNo.addEventListener('click', () => {
+  deductToPrice(machinePrice)
+  coffeePrice -= machinePrice
+  machinePrice = 0
+  securityPriceMachine = false
+})
+
+addsCoffeeYes.addEventListener('click', () => {
+  addsPriceTotal = coffeeDayConsumption * daysWorkMonth * addsPrice
+
+  coffeePrice += addsPriceTotal
+
+  resumeCoffeePrice.textContent = coffeePrice
+
+  if(securityPriceCoffeeAdds === false) {
+    addingToPrice(addsPriceTotal)
+    securityPriceCoffeeAdds = true
+  }
+})
+
+addsCoffeeNo.addEventListener('click', () => {
+  deductToPrice(addsPriceTotal)
+  coffeePrice -= addsPriceTotal
+  addsPriceTotal = 0
+  securityPriceCoffeeAdds = false
 })
 
 // Tea functions
