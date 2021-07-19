@@ -273,7 +273,7 @@ subCoffeeYes.addEventListener('click', () => {
     removeDnone(coffeeTypeContent)
     subCoffee.textContent = "Oui"
 
-    addingToPrice(coffeePrice)
+    addedSubPrice = coffeePrice
 })
 
 subCoffeeNo.addEventListener('click', () => {
@@ -378,6 +378,10 @@ coffeeGrain.addEventListener('click', () => {
       machinePriceCalculation()
       coffeeGrainPrice += machinePrice
     }
+
+    if(machineYesChecked === true && securityPriceCoffeeGrain === false && securityPriceCoffeeAdds === true) {
+        coffeeGrainPrice += addsPriceTotal
+    }
     
     // Security for not spamming
     if(securityPriceCoffeeGrain === false) {
@@ -411,6 +415,10 @@ coffeeCapsules.addEventListener('click', () => {
         machinePriceCalculation()
         coffeeCapsPrice += machinePrice
       }
+
+    if(machineYesChecked === true && securityPriceCoffeeCaps === false && securityPriceCoffeeAdds === true) {
+        coffeeGrainPrice += addsPriceTotal
+    }
 
     // Security for not spamming
     if(securityPriceCoffeeCaps === false) {
