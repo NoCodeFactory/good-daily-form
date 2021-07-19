@@ -225,7 +225,7 @@ form.addEventListener('keyup', () => {
     // Conditionnal visibility postal message
     console.log(postalField.value)
 
-    if((postalField.value) > 2) {
+    if((postalField.value).length > 2) {
         if((postalField.value).substring(0, 2) === "75" || "92" || "93" || "94" || "95") {
             removeDnone(postalMessage)
         } else {
