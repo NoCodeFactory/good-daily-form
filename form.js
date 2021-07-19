@@ -286,6 +286,7 @@ nextButton.addEventListener('click', () => {
         addDnone(nextButton)
         removeDnone(submitFormButton)
         submitFormButton.disabled = true
+        submitFormButton.classList.add('disabled-button')
   }
   
     if(indexSlide >= 1) {
@@ -333,14 +334,10 @@ form.addEventListener('keyup', () => {
             addDnone(postalMessage)
         }
     }
-})
 
-submitFormButton.addEventListener('click', () => {
-    if(emailForm.value === "" && nameStreetForm.value === "" && countryForm === "" || postalField === "") {
-        removeDnone(errorMessage)
-        submitFormButton.disabled = false
-    } else {
-        addDnone(errorMessage)
+    if(emailForm.value != "" && nameStreetForm.value != "" && countryForm != "" || postalField != "") {
+        submitFormButton.disabled = true
+        submitFormButton.classList.remove('disabled-button')
     }
 })
 
