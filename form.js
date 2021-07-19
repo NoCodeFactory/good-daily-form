@@ -202,7 +202,9 @@ nextButton.addEventListener('click', () => {
           subServiceNo.disabled = true
           serviceSecurityPrice = true
       }
-  } else if (coffeeCapsChecked === false && coffeeGrainChecked === false && indexSlide === 5) {
+  }
+  
+  if (coffeeCapsChecked === false && coffeeGrainChecked === false && indexSlide === 5) {
     subServiceNo.click()
     subServiceYes.disabled = false
     subServiceNo.disabled = false
