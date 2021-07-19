@@ -223,12 +223,12 @@ form.addEventListener('keyup', () => {
         }
 })
 
-postalField.addEventListener('keyup', () => {
+postalField.addEventListener('keyup', (_valueTyped) => {
     // Conditionnal visibility postal message
-    if((postalField.value).substring(0, 2) == "75" || "92" || "93" || "94" || "95") {
-        addDnone(postalMessage)
-    } else {
+    if(_valueTyped.substring(0, 2) != "75" || "92" || "93" || "94" || "95") {
         removeDnone(postalMessage)
+    } else {
+        addDnone(postalMessage)
     }
 })
 
