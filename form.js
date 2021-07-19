@@ -335,8 +335,8 @@ form.addEventListener('keyup', () => {
         }
     }
 
-    if(emailForm.value != "" && nameStreetForm.value != "" && countryForm != "" || postalField != "") {
-        submitFormButton.disabled = true
+    if(emailForm.value != "" && nameStreetForm.value != "" && countryForm.value != "" || postalField.value != "") {
+        submitFormButton.disabled = false
         submitFormButton.classList.remove('disabled-button')
     }
 })
