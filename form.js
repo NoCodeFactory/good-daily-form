@@ -217,16 +217,14 @@ form.addEventListener('keyup', () => {
 
     // Conditionnal visibility commercial contact
     if(parseInt(nSalaries.value) >= 101) {
-    		removeDnone(commercialContact)
+        removeDnone(commercialContact)
     } else {
-    		addDnone(commercialContact)
-        }
-})
+        addDnone(commercialContact)
+    }
 
-postalField.addEventListener('keyup', () => {
     // Conditionnal visibility postal message
     console.log(postalField.value)
-    if((postalField.value).slice(0, 2) != "75" || "92" || "93" || "94" || "95") {
+    if((postalField.value).charAt(0) + (postalField.value).charAt(1) === "75" || "92" || "93" || "94" || "95") {
         removeDnone(postalMessage)
     } else {
         addDnone(postalMessage)
