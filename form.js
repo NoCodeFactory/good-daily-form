@@ -333,7 +333,7 @@ coffeeGrain.addEventListener('click', () => {
     console.log(machinePrice)
     machinePriceCalculation()
     console.log(machinePrice)
-    coffeePrice += machinePrice
+    coffeeGrainPrice += machinePrice
     console.log(machinePrice)
     console.log(coffeePrice)
     resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
@@ -346,7 +346,7 @@ coffeeGrain.addEventListener('click', () => {
     deductToPrice(coffeeCapsPrice)
     coffeeCapsPrice = 0
 
-    coffeePrice += coffeeGrainPrice
+    coffeePrice = coffeeGrainPrice
     resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
 
     addingToPrice(coffeePrice)
@@ -367,7 +367,7 @@ coffeeCapsules.addEventListener('click', () => {
       console.log(machinePrice)
       machinePriceCalculation()
       console.log(machinePrice)
-      coffeePrice += machinePrice
+      coffeeCapsPrice = machinePrice
       console.log(machinePrice)
       console.log(coffeePrice)
       resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
