@@ -1,5 +1,7 @@
 // Form variables
 const form = document.querySelector('#form-gooddaily')
+const errorMessage = document.querySelector('#error-message')
+const submitFormButton = document.querySelector('#submit-form-button')
 
 	// Buttons variables
 let indexSlide = 0
@@ -145,8 +147,11 @@ let collectPrice = parseFloat(document.querySelector('#collect-price').textConte
 let collectPriceTotal = 0
 let serviceSecurityPrice = false
 
-        // Informations
-let postalField = document.querySelector('#postal-field') 
+// Informations
+const emailForm = document.querySelector('#email-form')
+const nameStreetForm = document.querySelector('#name-street-form')
+const countryForm = document.querySelector('#country-form')
+const postalField = document.querySelector('#postal-field')
 
 
 // Informations variables
@@ -189,9 +194,98 @@ nextButton.addEventListener('click', () => {
         console.log(nSalariesPresents)
   }
 
-    if(indexSlide < 6) {
+    // Conditionnal informations company
+    if(indexSlide === 0 && nSalaries.value != "" && jourTravail.value != "" && pointConso.value != "") {
         rightArrow.click()
         indexSlide += 1
+        addDnone(errorMessage)
+    } else {
+        removeDnone(errorMessage)
+    }
+
+    // Conditionnal Coffee
+    if(indexSlide === 1 && subCoffee.textContent === "0ui") {
+        if(coffeeGrainChecked === true || coffeeCapsChecked === true) {
+            rightArrow.click()
+            indexSlide += 1
+            addDnone(errorMessage)
+        } else {
+            removeDnone(errorMessage)
+        }
+    } else if(indexSlide === 1 && subCoffee.textContent === "Non") {
+        rightArrow.click()
+        indexSlide += 1
+        addDnone(errorMessage)
+    } else {
+        removeDnone(errorMessage)
+    }
+
+    // Conditionnal Tea
+    if(indexSlide === 2 && subTea.textContent === "Oui") {
+        if(resumeTeaText.textContent === "vrac" || resumeTeaText.textContent === "sachets") {
+            rightArrow.click()
+            indexSlide += 1
+            addDnone(errorMessage)
+        } 
+    } else if(indexSlide === 2 && subTea.textContent === "Non") {
+        rightArrow.click()
+        indexSlide += 1
+        addDnone(errorMessage)
+    } else {
+        removeDnone(errorMessage)
+    }
+
+    // Conditionnal Snacks
+    if(indexSlide === 3 && subSnacks.textContent === "Oui") {
+        rightArrow.click()
+        indexSlide += 1
+        addDnone(errorMessage)
+    } else if (indexSlide === 3 && subSnacks.textContent === "Non") {
+        rightArrow.click()
+        indexSlide += 1
+        addDnone(errorMessage)
+    } else {
+        removeDnone(errorMessage)
+    }
+
+    // Conditionnal Fruits
+    if(indexSlide === 4 && subFruits.textContent === "Oui") {
+        if(resumeFruitsDay.textContent === "lundi" || resumeFruitsDay === "mardi" || resumeFruitsDay === "lundi ou mardi") {
+            rightArrow.click()
+            indexSlide += 1
+            addDnone(errorMessage)
+        } else {
+            removeDnone(errorMessage)
+        }
+    } else if (indexSlide === 4 && subFruits.textContent === "Non") {
+        rightArrow.click()
+        indexSlide += 1
+        addDnone(errorMessage)
+    } else {
+        removeDnone(errorMessage)
+    }
+
+    // Conditionnal Service
+    if(indexSlide === 5 && subService.textContent === "Oui") {
+        if(borneCoffeeCheck.checked === true || borneCapsCheck.checked === true || bornePaperCardboardCheck.checked === true || bornePlasticCheck.checked === true || borneCanCheck.checked === true || borneGlassCheck === true || borneDibCheck === true) {
+            rightArrow.click()
+            indexSlide += 1
+            addDnone(errorMessage)
+        } else {
+            removeDnone(errorMessage)
+        }
+    } else if (indexSlide === 5 && subService.textContent === "Non") {
+        rightArrow.click()
+        indexSlide += 1
+        addDnone(errorMessage)
+    } else {
+        removeDnone(errorMessage)
+    }
+
+    if(indexSlide === 6) {
+        addDnone(nextButton)
+        removeDnone(submitFormButton)
+        submitFormButton.disabled = true
   }
   
     if(indexSlide >= 1) {
@@ -231,6 +325,18 @@ form.addEventListener('keyup', () => {
         } else {
             addDnone(postalMessage)
         }
+    }
+
+    if(emailForm.value != "" && nameStreetForm.value != "" && countryForm != "" || postalField != "") {
+        submitFormButton.disabled = false
+    }
+})
+
+submitFormButton.addEventListener('click', () => {
+    if(emailForm.value === "" && nameStreetForm.value === "" && countryForm === "" || postalField === "") {
+        removeDnone(errorMessage)
+    } else {
+        addDnone(errorMessage)
     }
 })
 
