@@ -195,14 +195,14 @@ nextButton.addEventListener('click', () => {
   }
 
   // If coffee is checked, making the service obligatory
-  if(indexSlide === 5 && coffeeCapsChecked === true || coffeeGrainChecked === true) {
+  if(coffeeCapsChecked === true || coffeeGrainChecked === true && indexSlide === 5) {
       if(serviceSecurityPrice === false) {
           subServiceYes.click()
           subServiceYes.disabled = true
           subServiceNo.disabled = true
           serviceSecurityPrice = true
       }
-  } else if (indexSlide === 5 && coffeeCapsChecked === false && coffeeGrainChecked === false) {
+  } else if (coffeeCapsChecked === false && coffeeGrainChecked === false && indexSlide === 5) {
     subServiceNo.click()
     subServiceYes.disabled = false
     subServiceNo.disabled = false
