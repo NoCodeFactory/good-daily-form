@@ -204,7 +204,7 @@ nextButton.addEventListener('click', () => {
     }
 
     // Conditionnal Coffee
-    if(indexSlide === 1 && subCoffee.textContent === "0ui") {
+    if(indexSlide === 1 && subCoffee.textContent === "Oui") {
         if(coffeeGrainChecked === true || coffeeCapsChecked === true) {
             rightArrow.click()
             indexSlide += 1
