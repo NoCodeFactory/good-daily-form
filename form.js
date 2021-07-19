@@ -243,13 +243,90 @@ subCoffeeNo.addEventListener('click', () => {
     subCoffee.textContent = "Non"
 })
 
+const machinePriceCalculation = () => {
+    if(nSalariesPresents <= 30) {
+    
+        if(pointConso.value === "1") {
+          if(coffeeGrainChecked === true) {
+            machinePrice = machineCoffeeS * 1
+          } else {
+            machinePrice = machineCoffeeCaps * 1
+          }
+        }
+    
+        if(pointConso.value === "2") {
+          if(coffeeGrainChecked === true) {
+            machinePrice = machineCoffeeS * 2
+          } else {
+            machinePrice = machineCoffeeCaps * 2
+          }
+        }
+        
+        if(pointConso.value === "3") {
+          if(coffeeGrainChecked === true) {
+            machinePrice = machineCoffeeS * 3
+          } else {
+            machinePrice = machineCoffeeCaps * 3
+          }
+        }
+      }
+    
+      if(nSalariesPresents >= 31 && nSalariesPresents <= 60) {
+    
+        if(pointConso.value === "1") {
+          if(coffeeGrainChecked === true) {
+            machinePrice = machineCoffeeM * 1
+          } else {
+            machinePrice = machineCoffeeCaps * 2
+          }
+        }
+    
+        if(pointConso.value === "2") {
+          if(coffeeGrainChecked === true) {
+            machinePrice = machineCoffeeM * 2
+          } else {
+            machinePrice = machineCoffeeCaps * 3
+          }
+        }
+    
+        if(pointConso.value === "3") {
+          if(coffeeGrainChecked === true) {
+            machinePrice = machineCoffeeM * 3
+          } else {
+            machinePrice = machineCoffeeCaps * 3
+          }
+        }
+      }
+    
+      if(nSalariesPresents >= 61) {
+    
+        if(pointConso.value === "1") {
+          if(coffeeGrainChecked === true) {
+            machinePrice = machineCoffeeL * 1
+          } else {
+            machinePrice = machineCoffeeCaps * 3
+          }
+        }
+    
+        if(pointConso.value === "2") {
+          machinePrice = "hors scope"
+        }
+    
+        if(pointConso.value === "3") {
+          machinePrice = "hors scope"
+        }
+      }
+
+    return machinePrice
+}
+
 coffeeGrain.addEventListener('click', () => {
 
   if(machineYesChecked === true) {
     deductToPrice(machinePrice)
     machinePrice = 0
-    securityPriceMachine = false
-    machineYes.click()
+    machinePriceCalculation()
+    coffeePrice += machinePrice
     resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
   }
 
@@ -277,8 +354,8 @@ coffeeCapsules.addEventListener('click', () => {
   if(machineYesChecked === true) {
       deductToPrice(machinePrice)
       machinePrice = 0
-      securityPriceMachine = false
-      machineYes.click()
+      machinePriceCalculation()
+      coffeePrice += machinePrice
       resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
     }
 
@@ -306,79 +383,7 @@ machineYes.addEventListener('click', () => {
   machineYesChecked = true
   machineNoChecked = false
 
-  if(nSalariesPresents <= 30) {
-    
-    if(pointConso.value === "1") {
-      if(coffeeGrainChecked === true) {
-        machinePrice = machineCoffeeS * 1
-      } else {
-        machinePrice = machineCoffeeCaps * 1
-      }
-    }
-
-    if(pointConso.value === "2") {
-      if(coffeeGrainChecked === true) {
-        machinePrice = machineCoffeeS * 2
-      } else {
-        machinePrice = machineCoffeeCaps * 2
-      }
-    }
-    
-    if(pointConso.value === "3") {
-      if(coffeeGrainChecked === true) {
-        machinePrice = machineCoffeeS * 3
-      } else {
-        machinePrice = machineCoffeeCaps * 3
-      }
-    }
-  }
-
-  if(nSalariesPresents >= 31 && nSalariesPresents <= 60) {
-
-    if(pointConso.value === "1") {
-      if(coffeeGrainChecked === true) {
-        machinePrice = machineCoffeeM * 1
-      } else {
-        machinePrice = machineCoffeeCaps * 2
-      }
-    }
-
-    if(pointConso.value === "2") {
-      if(coffeeGrainChecked === true) {
-        machinePrice = machineCoffeeM * 2
-      } else {
-        machinePrice = machineCoffeeCaps * 3
-      }
-    }
-
-    if(pointConso.value === "3") {
-      if(coffeeGrainChecked === true) {
-        machinePrice = machineCoffeeM * 3
-      } else {
-        machinePrice = machineCoffeeCaps * 3
-      }
-    }
-  }
-
-  if(nSalariesPresents >= 61) {
-
-    if(pointConso.value === "1") {
-      if(coffeeGrainChecked === true) {
-        machinePrice = machineCoffeeL * 1
-      } else {
-        machinePrice = machineCoffeeCaps * 3
-      }
-    }
-
-    if(pointConso.value === "2") {
-      machinePrice = "hors scope"
-    }
-
-    if(pointConso.value === "3") {
-      machinePrice = "hors scope"
-    }
-  }
-
+  machinePriceCalculation()
   
   if(securityPriceMachine === false) {
     coffeePrice = coffeePrice + machinePrice
