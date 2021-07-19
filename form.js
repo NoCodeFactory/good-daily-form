@@ -143,6 +143,7 @@ const borneDib = document.querySelector('#born-dib')
 let borneDibCheck = document.querySelector('#born-dib-check')
 let collectPrice = parseFloat(document.querySelector('#collect-price').textContent)
 let collectPriceTotal = 0
+let serviceSecurityPrice = false
 
         // Informations
 let postalField = document.querySelector('#postal-field') 
@@ -192,12 +193,25 @@ nextButton.addEventListener('click', () => {
         rightArrow.click()
         indexSlide += 1
   }
+
+  // If coffee is checked, making the service obligatory
+  if(indexSlide === 5 && coffeeCapsChecked === true || coffeeGrainChecked === true) {
+      if(serviceSecurityPrice === false) {
+          subServiceYes.click()
+          subServiceYes.disabled = true
+          subServiceNo.disabled = true
+          serviceSecurityPrice = true
+      }
+  } else if (indexSlide === 5 && coffeeCapsChecked === false && coffeeGrainChecked === false) {
+    subServiceNo.click()
+    subServiceYes.disabled = false
+    subServiceNo.disabled = false
+  }
   
     if(indexSlide >= 1) {
         removeDnone(backButton)
         removeDnone(aboResume)
 	}
-
 })
 
 backButton.addEventListener('click', () => {
@@ -268,6 +282,8 @@ subCoffeeNo.addEventListener('click', () => {
     subCoffee.textContent = "Non"
 
     deductToPrice(coffeePrice)
+
+    serviceSecurityPrice = false
 })
 
 const machinePriceCalculation = () => {
@@ -355,9 +371,6 @@ coffeeGrain.addEventListener('click', () => {
 
     removeDnone(machineContent)
 
-    // Activating service when coffee is checked
-    subServiceYes.click()
-
     // Calculate the price
     coffeeGrainPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
 
@@ -390,9 +403,6 @@ coffeeCapsules.addEventListener('click', () => {
     coffeeGrainChecked = false
 
     removeDnone(machineContent)
-
-    // Activating service when coffee is checked
-    subServiceYes.click()
   
     // Calculate the price
     coffeeCapsPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
