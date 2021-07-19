@@ -322,16 +322,22 @@ const machinePriceCalculation = () => {
 
 coffeeGrain.addEventListener('click', () => {
 
+    coffeeGrainChecked = true
+    coffeeCapsChecked = false
+
   if(machineYesChecked === true) {
+    console.log(machinePrice)
     deductToPrice(machinePrice)
+    console.log(machinePrice)
     machinePrice = 0
+    console.log(machinePrice)
     machinePriceCalculation()
+    console.log(machinePrice)
     coffeePrice += machinePrice
+    console.log(machinePrice)
+    console.log(coffeePrice)
     resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
   }
-
-  coffeeGrainChecked = true
-  coffeeCapsChecked = false
   
   coffeeGrainPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
   
@@ -340,7 +346,7 @@ coffeeGrain.addEventListener('click', () => {
     deductToPrice(coffeeCapsPrice)
     coffeeCapsPrice = 0
 
-    coffeePrice = coffeeGrainPrice
+    coffeePrice += coffeeGrainPrice
     resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
 
     addingToPrice(coffeePrice)
@@ -350,17 +356,22 @@ coffeeGrain.addEventListener('click', () => {
 })
 
 coffeeCapsules.addEventListener('click', () => {
+
+    coffeeCapsChecked = true
+    coffeeGrainChecked = false
   
   if(machineYesChecked === true) {
+      console.log(machinePrice)
       deductToPrice(machinePrice)
       machinePrice = 0
+      console.log(machinePrice)
       machinePriceCalculation()
+      console.log(machinePrice)
       coffeePrice += machinePrice
+      console.log(machinePrice)
+      console.log(coffeePrice)
       resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
     }
-
-  coffeeCapsChecked = true
-  coffeeGrainChecked = false
 
   coffeeCapsPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
 
@@ -369,7 +380,7 @@ coffeeCapsules.addEventListener('click', () => {
     deductToPrice(coffeeGrainPrice)
     coffeeGrainPrice = 0
 
-    coffeePrice = coffeeCapsPrice
+    coffeePrice += coffeeCapsPrice
     resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
 
     addingToPrice(coffeePrice)
