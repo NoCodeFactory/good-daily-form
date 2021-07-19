@@ -223,9 +223,10 @@ form.addEventListener('keyup', () => {
         }
 })
 
-postalField.addEventListener('change', () => {
+postalField.addEventListener('keyup', () => {
     // Conditionnal visibility postal message
-    if((postalField.value).substring(0, 2) != "75" || "92" || "93" || "94" || "95") {
+    console.log(postalField.value)
+    if((postalField.value).slice(0, 2) != "75" || "92" || "93" || "94" || "95") {
         removeDnone(postalMessage)
     } else {
         addDnone(postalMessage)
