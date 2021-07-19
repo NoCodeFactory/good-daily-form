@@ -328,16 +328,10 @@ coffeeGrain.addEventListener('click', () => {
     coffeeGrainPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
 
     if(machineYesChecked === true) {
-      console.log(machinePrice)
-      deductToPrice(machinePrice)
-      console.log(machinePrice)
+    //   deductToPrice(machinePrice)
       machinePrice = 0
-      console.log(machinePrice)
       machinePriceCalculation()
-      console.log(machinePrice)
       coffeeGrainPrice += machinePrice
-      console.log(machinePrice)
-      console.log(coffeePrice)
       resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
     }
     
@@ -363,15 +357,10 @@ coffeeCapsules.addEventListener('click', () => {
     coffeeCapsPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
 
     if(machineYesChecked === true) {
-        console.log(machinePrice)
-        deductToPrice(machinePrice)
+        // deductToPrice(machinePrice)
         machinePrice = 0
-        console.log(machinePrice)
         machinePriceCalculation()
-        console.log(machinePrice)
         coffeeCapsPrice += machinePrice
-        console.log(machinePrice)
-        console.log(coffeePrice)
         resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
       }
 
