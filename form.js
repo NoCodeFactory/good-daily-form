@@ -228,7 +228,7 @@ form.addEventListener('keyup', () => {
     if((postalField.value).length > 2) {
         if((postalField.value).substring(0, 2) === "75" || "92" || "93" || "94" || "95") {
             addDnone(postalMessage)
-        } else {
+        } else if((postalField.value).substring(0, 2) != "75" && "92" && "93" && "94" && "95") {
             removeDnone(postalMessage)
         }
     }
