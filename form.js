@@ -325,22 +325,22 @@ coffeeGrain.addEventListener('click', () => {
     coffeeGrainChecked = true
     coffeeCapsChecked = false
 
-  if(machineYesChecked === true) {
-    console.log(machinePrice)
-    deductToPrice(machinePrice)
-    console.log(machinePrice)
-    machinePrice = 0
-    console.log(machinePrice)
-    machinePriceCalculation()
-    console.log(machinePrice)
-    coffeeGrainPrice += machinePrice
-    console.log(machinePrice)
-    console.log(coffeePrice)
-    resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
-  }
-  
-  coffeeGrainPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
-  
+    coffeeGrainPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
+
+    if(machineYesChecked === true) {
+      console.log(machinePrice)
+      deductToPrice(machinePrice)
+      console.log(machinePrice)
+      machinePrice = 0
+      console.log(machinePrice)
+      machinePriceCalculation()
+      console.log(machinePrice)
+      coffeeGrainPrice += machinePrice
+      console.log(machinePrice)
+      console.log(coffeePrice)
+      resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+    }
+    
   if(securityPriceCoffeeGrain === false) {
 
     deductToPrice(coffeeCapsPrice)
@@ -360,27 +360,27 @@ coffeeCapsules.addEventListener('click', () => {
     coffeeCapsChecked = true
     coffeeGrainChecked = false
   
-  if(machineYesChecked === true) {
-      console.log(machinePrice)
-      deductToPrice(machinePrice)
-      machinePrice = 0
-      console.log(machinePrice)
-      machinePriceCalculation()
-      console.log(machinePrice)
-      coffeeCapsPrice = machinePrice
-      console.log(machinePrice)
-      console.log(coffeePrice)
-      resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
-    }
+    coffeeCapsPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
 
-  coffeeCapsPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
+    if(machineYesChecked === true) {
+        console.log(machinePrice)
+        deductToPrice(machinePrice)
+        machinePrice = 0
+        console.log(machinePrice)
+        machinePriceCalculation()
+        console.log(machinePrice)
+        coffeeCapsPrice += machinePrice
+        console.log(machinePrice)
+        console.log(coffeePrice)
+        resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+      }
 
   if(securityPriceCoffeeCaps === false) {
 
     deductToPrice(coffeeGrainPrice)
     coffeeGrainPrice = 0
 
-    coffeePrice += coffeeCapsPrice
+    coffeePrice = coffeeCapsPrice
     resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
 
     addingToPrice(coffeePrice)
