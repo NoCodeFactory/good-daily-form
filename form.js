@@ -267,7 +267,7 @@ nextButton.addEventListener('click', () => {
 
     // Conditionnal Service
     if(indexSlide === 5 && subService.textContent === "Oui") {
-        if(borneCoffeeCheck.checked === true || borneCapsCheck.checked === true || bornePaperCardboardCheck.checked === true || bornePlasticCheck.checked === true || borneCanCheck.checked === true || borneGlassCheck === true || borneDibCheck === true) {
+        if(borneCoffeeCheck.checked === true || borneCapsCheck.checked === true || bornePaperCardboardCheck.checked === true || bornePlasticCheck.checked === true || borneCanCheck.checked === true || borneGlassCheck.checked === true || borneDibCheck.checked === true) {
             rightArrow.click()
             indexSlide += 1
             addDnone(errorMessage)
@@ -335,7 +335,7 @@ form.addEventListener('keyup', () => {
         }
     }
 
-    if(emailForm.value != "" && nameStreetForm.value != "" && countryForm.value != "" || postalField.value != "") {
+    if(emailForm.value != "" && nameStreetForm.value != "" && countryForm.value != "" && postalField.value != "") {
         submitFormButton.disabled = false
         submitFormButton.classList.remove('disabled-button')
     }
