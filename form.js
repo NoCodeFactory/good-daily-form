@@ -189,7 +189,7 @@ nextButton.addEventListener('click', () => {
         console.log(nSalariesPresents)
   }
 
-    if(indexSlide < 5) {
+    if(indexSlide <= 6) {
         rightArrow.click()
         indexSlide += 1
   }
