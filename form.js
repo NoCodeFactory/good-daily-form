@@ -223,9 +223,9 @@ form.addEventListener('keyup', () => {
         }
 })
 
-postalField.addEventListener('keyup', (_valueTyped) => {
+postalField.addEventListener('change', () => {
     // Conditionnal visibility postal message
-    if(_valueTyped.substring(0, 2) != "75" || "92" || "93" || "94" || "95") {
+    if((postalField.value).substring(0, 2) != "75" || "92" || "93" || "94" || "95") {
         removeDnone(postalMessage)
     } else {
         addDnone(postalMessage)
