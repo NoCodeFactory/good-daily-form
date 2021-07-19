@@ -281,8 +281,6 @@ subCoffeeNo.addEventListener('click', () => {
     addDnone(subCoffeeOptions)
     subCoffee.textContent = "Non"
 
-    deductToPrice(coffeePrice)
-
     serviceSecurityPrice = false
 })
 
