@@ -223,7 +223,7 @@ form.addEventListener('keyup', () => {
         }
 })
 
-postalField.addEventListener('click', () => {
+postalField.addEventListener('keyup', () => {
     // Conditionnal visibility postal message
     if(parseInt((postalField.value).substring(0, 2)) != 75 && 92 && 93 && 94 && 95) {
         removeDnone(postalMessage)
