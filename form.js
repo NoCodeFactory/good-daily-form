@@ -216,7 +216,7 @@ nextButton.addEventListener('click', () => {
         rightArrow.click()
         indexSlide += 1
         addDnone(errorMessage)
-    } else {
+    } else if(indexSlide === 1 && subCoffee.textContent === "") {
         removeDnone(errorMessage)
     }
 
@@ -231,7 +231,7 @@ nextButton.addEventListener('click', () => {
         rightArrow.click()
         indexSlide += 1
         addDnone(errorMessage)
-    } else {
+    } else if(indexSlide === 2 && subTea.textContent === ""){
         removeDnone(errorMessage)
     }
 
@@ -244,13 +244,13 @@ nextButton.addEventListener('click', () => {
         rightArrow.click()
         indexSlide += 1
         addDnone(errorMessage)
-    } else {
+    } else if(indexSlide === 3 && subSnacks.textContent === "") {
         removeDnone(errorMessage)
     }
 
     // Conditionnal Fruits
     if(indexSlide === 4 && subFruits.textContent === "Oui") {
-        if(resumeFruitsDay.textContent === "lundi" || resumeFruitsDay === "mardi" || resumeFruitsDay === "lundi ou mardi") {
+        if(resumeFruitsDay.textContent === "lundi" || resumeFruitsDay.textContent === "mardi" || resumeFruitsDay.textContent === "lundi ou mardi") {
             rightArrow.click()
             indexSlide += 1
             addDnone(errorMessage)
@@ -261,7 +261,7 @@ nextButton.addEventListener('click', () => {
         rightArrow.click()
         indexSlide += 1
         addDnone(errorMessage)
-    } else {
+    } else if(indexSlide === 4 && subFruits.textContent === ""){
         removeDnone(errorMessage)
     }
 
@@ -278,7 +278,7 @@ nextButton.addEventListener('click', () => {
         rightArrow.click()
         indexSlide += 1
         addDnone(errorMessage)
-    } else {
+    } else if(indexSlide === 5 && subService.textContent === "") {
         removeDnone(errorMessage)
     }
 
@@ -309,6 +309,8 @@ backButton.addEventListener('click', () => {
         removeDnone(nextButton)
         addDnone(submitFormButton)
     }
+
+    addDnone(errorMessage)
 })
 
 // Taking informations from the form
