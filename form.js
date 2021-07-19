@@ -220,73 +220,73 @@ nextButton.addEventListener('click', () => {
         removeDnone(errorMessage)
     }
 
-    // Conditionnal Tea
-    if(indexSlide === 2 && subTea.textContent === "Oui") {
-        if(resumeTeaText.textContent === "vrac" || resumeTeaText.textContent === "sachets") {
-            rightArrow.click()
-            indexSlide += 1
-            addDnone(errorMessage)
-        } 
-    } else if(indexSlide === 2 && subTea.textContent === "Non") {
-        rightArrow.click()
-        indexSlide += 1
-        addDnone(errorMessage)
-    } else {
-        removeDnone(errorMessage)
-    }
+//     // Conditionnal Tea
+//     if(indexSlide === 2 && subTea.textContent === "Oui") {
+//         if(resumeTeaText.textContent === "vrac" || resumeTeaText.textContent === "sachets") {
+//             rightArrow.click()
+//             indexSlide += 1
+//             addDnone(errorMessage)
+//         } 
+//     } else if(indexSlide === 2 && subTea.textContent === "Non") {
+//         rightArrow.click()
+//         indexSlide += 1
+//         addDnone(errorMessage)
+//     } else {
+//         removeDnone(errorMessage)
+//     }
 
-    // Conditionnal Snacks
-    if(indexSlide === 3 && subSnacks.textContent === "Oui") {
-        rightArrow.click()
-        indexSlide += 1
-        addDnone(errorMessage)
-    } else if (indexSlide === 3 && subSnacks.textContent === "Non") {
-        rightArrow.click()
-        indexSlide += 1
-        addDnone(errorMessage)
-    } else {
-        removeDnone(errorMessage)
-    }
+//     // Conditionnal Snacks
+//     if(indexSlide === 3 && subSnacks.textContent === "Oui") {
+//         rightArrow.click()
+//         indexSlide += 1
+//         addDnone(errorMessage)
+//     } else if (indexSlide === 3 && subSnacks.textContent === "Non") {
+//         rightArrow.click()
+//         indexSlide += 1
+//         addDnone(errorMessage)
+//     } else {
+//         removeDnone(errorMessage)
+//     }
 
-    // Conditionnal Fruits
-    if(indexSlide === 4 && subFruits.textContent === "Oui") {
-        if(resumeFruitsDay.textContent === "lundi" || resumeFruitsDay === "mardi" || resumeFruitsDay === "lundi ou mardi") {
-            rightArrow.click()
-            indexSlide += 1
-            addDnone(errorMessage)
-        } else {
-            removeDnone(errorMessage)
-        }
-    } else if (indexSlide === 4 && subFruits.textContent === "Non") {
-        rightArrow.click()
-        indexSlide += 1
-        addDnone(errorMessage)
-    } else {
-        removeDnone(errorMessage)
-    }
+//     // Conditionnal Fruits
+//     if(indexSlide === 4 && subFruits.textContent === "Oui") {
+//         if(resumeFruitsDay.textContent === "lundi" || resumeFruitsDay === "mardi" || resumeFruitsDay === "lundi ou mardi") {
+//             rightArrow.click()
+//             indexSlide += 1
+//             addDnone(errorMessage)
+//         } else {
+//             removeDnone(errorMessage)
+//         }
+//     } else if (indexSlide === 4 && subFruits.textContent === "Non") {
+//         rightArrow.click()
+//         indexSlide += 1
+//         addDnone(errorMessage)
+//     } else {
+//         removeDnone(errorMessage)
+//     }
 
-    // Conditionnal Service
-    if(indexSlide === 5 && subService.textContent === "Oui") {
-        if(borneCoffeeCheck.checked === true || borneCapsCheck.checked === true || bornePaperCardboardCheck.checked === true || bornePlasticCheck.checked === true || borneCanCheck.checked === true || borneGlassCheck === true || borneDibCheck === true) {
-            rightArrow.click()
-            indexSlide += 1
-            addDnone(errorMessage)
-        } else {
-            removeDnone(errorMessage)
-        }
-    } else if (indexSlide === 5 && subService.textContent === "Non") {
-        rightArrow.click()
-        indexSlide += 1
-        addDnone(errorMessage)
-    } else {
-        removeDnone(errorMessage)
-    }
+//     // Conditionnal Service
+//     if(indexSlide === 5 && subService.textContent === "Oui") {
+//         if(borneCoffeeCheck.checked === true || borneCapsCheck.checked === true || bornePaperCardboardCheck.checked === true || bornePlasticCheck.checked === true || borneCanCheck.checked === true || borneGlassCheck === true || borneDibCheck === true) {
+//             rightArrow.click()
+//             indexSlide += 1
+//             addDnone(errorMessage)
+//         } else {
+//             removeDnone(errorMessage)
+//         }
+//     } else if (indexSlide === 5 && subService.textContent === "Non") {
+//         rightArrow.click()
+//         indexSlide += 1
+//         addDnone(errorMessage)
+//     } else {
+//         removeDnone(errorMessage)
+//     }
 
-    if(indexSlide === 6) {
-        addDnone(nextButton)
-        removeDnone(submitFormButton)
-        submitFormButton.disabled = true
-  }
+//     if(indexSlide === 6) {
+//         addDnone(nextButton)
+//         removeDnone(submitFormButton)
+//         submitFormButton.disabled = true
+//   }
   
     if(indexSlide >= 1) {
         removeDnone(backButton)
@@ -300,10 +300,15 @@ backButton.addEventListener('click', () => {
     indexSlide -= 1
   }
   
-  if(indexSlide < 1) {
-  	addDnone(backButton)
-  	addDnone(aboResume)
-	}
+    if(indexSlide < 1) {
+        addDnone(backButton)
+        addDnone(aboResume)
+    }
+
+    if(indexSlide < 6) {
+        removeDnone(nextButton)
+        addDnone(submitFormButton)
+    }
 })
 
 // Taking informations from the form
