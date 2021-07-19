@@ -333,15 +333,12 @@ form.addEventListener('keyup', () => {
             addDnone(postalMessage)
         }
     }
-
-    if(emailForm.value != "" && nameStreetForm.value != "" && countryForm != "" || postalField != "") {
-        submitFormButton.disabled = false
-    }
 })
 
 submitFormButton.addEventListener('click', () => {
     if(emailForm.value === "" && nameStreetForm.value === "" && countryForm === "" || postalField === "") {
         removeDnone(errorMessage)
+        submitFormButton.disabled = false
     } else {
         addDnone(errorMessage)
     }
