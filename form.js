@@ -1,5 +1,5 @@
 // Form variables
-const form = document.querySelector('#test-form')
+const form = document.querySelector('#form-gooddaily')
 
 	// Buttons variables
 let indexSlide = 0
@@ -10,8 +10,10 @@ const leftArrow = document.querySelector('#left-arrow')
 
 	// Messages variables
 const commercialContact = document.querySelector('#commercial-contact')
+const commercialContact02 = document.querySelector('#commercial-contact-02')
 const conseil = document.querySelector('#conseil')
 const messageServiceCheck = document.querySelector('#message-service-check')
+const postalMessage = document.querySelector('#postal-message')
 	
   // Content resume variables
 const aboResume = document.querySelector('#subscription-resume')
@@ -65,6 +67,9 @@ const grain = document.querySelector('#grain')
 const capsules = document.querySelector('#capsules')
 const addsCoffeeYes = document.querySelector('#adds-coffee-yes')
 const addsCoffeeNo = document.querySelector('#adds-coffee-no')
+const coffeeTypeContent = document.querySelector('#coffee-type-content')
+const machineContent = document.querySelector('#machine-content')
+const addsContent = document.querySelector('#adds-content')
 let coffeeDayConsumption = parseFloat(document.querySelector('#coffee-day-consumption').textContent)
 let coffeePricePerKg = parseFloat(document.querySelector('#coffee-price-per-kg').textContent)
 let coffeeConsumptionPerkg = parseFloat(document.querySelector('#coffee-consumption-per-kg').textContent)
@@ -139,6 +144,9 @@ let borneDibCheck = document.querySelector('#born-dib-check')
 let collectPrice = parseFloat(document.querySelector('#collect-price').textContent)
 let collectPriceTotal = 0
 
+        // Informations
+let postalField = document.querySelector('#postal-field') 
+
 
 // Informations variables
 
@@ -176,18 +184,18 @@ const deductToPrice = (currentPrice) => {
 // Moving throught the form
 nextButton.addEventListener('click', () => {
     if(indexSlide < 1) {
-    nSalariesPresents = parseFloat(nSalaries.value) * (5 - parseInt(jourTravail.value)) / 5
-    console.log(nSalariesPresents)
+        nSalariesPresents = parseFloat(nSalaries.value) * (5 - parseInt(jourTravail.value)) / 5
+        console.log(nSalariesPresents)
   }
 
-    if(indexSlide < 5) {
-  	rightArrow.click()
-    indexSlide += 1
+    if(indexSlide < 6) {
+        rightArrow.click()
+        indexSlide += 1
   }
   
     if(indexSlide >= 1) {
-  removeDnone(backButton)
-  removeDnone(aboResume)
+        removeDnone(backButton)
+        removeDnone(aboResume)
 	}
 
 })
@@ -208,24 +216,38 @@ backButton.addEventListener('click', () => {
 form.addEventListener('keyup', () => {
 
     // Conditionnal visibility commercial contact
-    if (parseInt(nSalaries.value) >= 101) {
+    if(parseInt(nSalaries.value) >= 101) {
     		removeDnone(commercialContact)
     } else {
     		addDnone(commercialContact)
         }
+
+    // Conditionnal visibility postal message
+    if(parseInt((postalField.value).substring(0, 2)) != 75 && 92 && 93 && 94 && 95) {
+        removeDnone(postalMessage)
+    } else {
+        addDnone(postalMessage)
+    }
 })
 
-if(parseInt(pointConso.value) >= 3 && parseInt(nSalaries.value) <= 30) {
-    removeDnone(conseil)
-} else {
-    addDnone(conseil)
-}
 
 pointConso.addEventListener('click', () => {
-	  if(parseInt(pointConso.value) >= 3 && parseInt(nSalaries.value) <= 30) {
-    	removeDnone(conseil)
+    if(parseInt(pointConso.value) >= 3 && parseInt(nSalaries.value) <= 30) {
+        removeDnone(conseil)
     } else {
         addDnone(conseil)
+    }
+    
+    if(parseInt(pointConso.value) >= 3 && parseInt(nSalaries.value) <= 30) {
+        removeDnone(conseil)
+    } else {
+        addDnone(conseil)
+    }
+
+    if(pointConso.value == 4) {
+        removeDnone(commercialContact02)
+    } else {
+        addDnone(commercialContact02)
     }
 })
 
@@ -234,13 +256,18 @@ pointConso.addEventListener('click', () => {
 subCoffeeYes.addEventListener('click', () => {
     removeDnone(contentCoffee)
     removeDnone(subCoffeeOptions)
+    removeDnone(coffeeTypeContent)
     subCoffee.textContent = "Oui"
+
+    addingToPrice(coffeePrice)
 })
 
 subCoffeeNo.addEventListener('click', () => {
     addDnone(contentCoffee)
     addDnone(subCoffeeOptions)
     subCoffee.textContent = "Non"
+
+    deductToPrice(coffeePrice)
 })
 
 const machinePriceCalculation = () => {
@@ -322,66 +349,82 @@ const machinePriceCalculation = () => {
 
 coffeeGrain.addEventListener('click', () => {
 
+    // Get what's checked
     coffeeGrainChecked = true
     coffeeCapsChecked = false
 
+    removeDnone(machineContent)
+
+    // Activating service when coffee is checked
+    subServiceYes.click()
+
+    // Calculate the price
     coffeeGrainPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
 
     if(machineYesChecked === true) {
-    //   deductToPrice(machinePrice)
       machinePrice = 0
       machinePriceCalculation()
       coffeeGrainPrice += machinePrice
       resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
     }
     
-  if(securityPriceCoffeeGrain === false) {
+    // Security for not spamming
+    if(securityPriceCoffeeGrain === false) {
 
-    deductToPrice(coffeeCapsPrice)
-    coffeeCapsPrice = 0
+        deductToPrice(coffeeCapsPrice)
+        coffeeCapsPrice = 0
 
-    coffeePrice = coffeeGrainPrice
-    resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+        coffeePrice = coffeeGrainPrice
+        resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
 
-    addingToPrice(coffeePrice)
-    securityPriceCoffeeGrain = true
-    securityPriceCoffeeCaps = false
-  }
+        addingToPrice(coffeePrice)
+        securityPriceCoffeeGrain = true
+        securityPriceCoffeeCaps = false
+    }
 })
 
 coffeeCapsules.addEventListener('click', () => {
 
+    // Get what's checked
     coffeeCapsChecked = true
     coffeeGrainChecked = false
+
+    removeDnone(machineContent)
+
+    // Activating service when coffee is checked
+    subServiceYes.click()
   
+    // Calculate the price
     coffeeCapsPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
 
     if(machineYesChecked === true) {
-        // deductToPrice(machinePrice)
         machinePrice = 0
         machinePriceCalculation()
         coffeeCapsPrice += machinePrice
         resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
       }
 
-  if(securityPriceCoffeeCaps === false) {
+    // Security for not spamming
+    if(securityPriceCoffeeCaps === false) {
 
-    deductToPrice(coffeeGrainPrice)
-    coffeeGrainPrice = 0
+        deductToPrice(coffeeGrainPrice)
+        coffeeGrainPrice = 0
 
-    coffeePrice = coffeeCapsPrice
-    resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+        coffeePrice = coffeeCapsPrice
+        resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
 
-    addingToPrice(coffeePrice)
-    securityPriceCoffeeCaps = true
-    securityPriceCoffeeGrain = false
-  }
+        addingToPrice(coffeePrice)
+        securityPriceCoffeeCaps = true
+        securityPriceCoffeeGrain = false
+    }
 })
 
 machineYes.addEventListener('click', () => {
 
   machineYesChecked = true
   machineNoChecked = false
+
+  removeDnone(addsContent)
 
   machinePriceCalculation()
   
@@ -396,6 +439,9 @@ machineYes.addEventListener('click', () => {
 machineNo.addEventListener('click', () => {
   machineNoChecked = true
   machineYesChecked = false
+
+  removeDnone(addsContent)
+
   deductToPrice(machinePrice)
   coffeePrice = coffeePrice - machinePrice
   resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
@@ -629,6 +675,18 @@ subServiceYes.addEventListener('click', () => {
             collectPriceTotal = collectPrice = "Hors scope"
         }
         resumeServicePrice.textContent = collectPriceTotal
+    }
+
+    if(coffeeGrainChecked === true) {
+        borneCoffeeCheck.click()
+        borneCoffeeCheck.disabled = true
+        borneCoffee.classList.add('disabled-class')
+    }
+
+    if(coffeeCapsChecked === true) {
+        borneCapsCheck.click()
+        borneCapsCheck.disabled = true
+        borneCaps.classList.add('disabled-class')
     }
 
     if(securityPriceService === false) {
