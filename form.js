@@ -226,10 +226,10 @@ form.addEventListener('keyup', () => {
     console.log(postalField.value)
 
     if((postalField.value).length > 2) {
-        if((postalField.value).substring(0, 2) === "75" || "92" || "93" || "94" || "95") {
-            addDnone(postalMessage)
-        } else if((postalField.value).substring(0, 2) != "75" && "92" && "93" && "94" && "95") {
+        if((postalField.value).substring(0, 2) != "75" && (postalField.value).substring(0, 2) != "92" && (postalField.value).substring(0, 2) != "93" && (postalField.value).substring(0, 2) != "94" && (postalField.value).substring(0, 2) != "95") {
             removeDnone(postalMessage)
+        } else {
+            addDnone(postalMessage)
         }
     }
 })
