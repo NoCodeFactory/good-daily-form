@@ -189,7 +189,7 @@ nextButton.addEventListener('click', () => {
         console.log(nSalariesPresents)
   }
 
-    if(indexSlide < 6) {
+    if(indexSlide < 5) {
         rightArrow.click()
         indexSlide += 1
   }
@@ -235,7 +235,9 @@ form.addEventListener('keyup', () => {
     } else {
     		addDnone(commercialContact)
         }
+})
 
+postalField.addEventListener('click', () => {
     // Conditionnal visibility postal message
     if(parseInt((postalField.value).substring(0, 2)) != 75 && 92 && 93 && 94 && 95) {
         removeDnone(postalMessage)
@@ -658,10 +660,6 @@ subServiceYes.addEventListener('click', () => {
     removeDnone(subSerivceOptions)
     subService.textContent = "Oui"
 
-    // If coffee grain was choosed
-
-    // If coffee capsules was choosed
-
     if(nSalariesPresents >= 0 && nSalariesPresents <= 30) {
         if(pointConso.value === "1") {
             collectPriceTotal = collectPrice * 1
@@ -695,12 +693,14 @@ subServiceYes.addEventListener('click', () => {
         resumeServicePrice.textContent = collectPriceTotal
     }
 
+    // If coffee grain was choosed
     if(coffeeGrainChecked === true) {
         borneCoffeeCheck.click()
         borneCoffeeCheck.disabled = true
         borneCoffee.classList.add('disabled-class')
     }
 
+    // If coffee capsules was choosed
     if(coffeeCapsChecked === true) {
         borneCapsCheck.click()
         borneCapsCheck.disabled = true
