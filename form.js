@@ -224,10 +224,13 @@ form.addEventListener('keyup', () => {
 
     // Conditionnal visibility postal message
     console.log(postalField.value)
-    if((postalField.value).charAt(0) + (postalField.value).charAt(1) === "75" || "92" || "93" || "94" || "95") {
-        removeDnone(postalMessage)
-    } else {
-        addDnone(postalMessage)
+
+    if((postalField.value) > 2) {
+        if((postalField.value).substring(0, 2) === "75" || "92" || "93" || "94" || "95") {
+            removeDnone(postalMessage)
+        } else {
+            addDnone(postalMessage)
+        }
     }
 })
 
