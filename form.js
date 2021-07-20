@@ -177,14 +177,14 @@ const removeDnone = (element) => {
 const addingToPrice = (currentPrice) => {
     addedSubPrice = addedSubPrice + currentPrice
     subscriptionPrice.textContent = addedSubPrice.toFixed(2)
-    singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
+    singlePrice.textContent = (parseFloat(addedSubPrice) / (parseInt(nSalaries.value) * daysWorkMonth)).toFixed(2)
 }
 
 //  Deduct the current price from the total price
 const deductToPrice = (currentPrice) => {
     addedSubPrice = addedSubPrice - currentPrice
     subscriptionPrice.textContent = addedSubPrice.toFixed(2)
-    singlePrice.textContent = parseInt(parseInt(addedSubPrice) / parseInt(nSalaries.value) * daysWorkMonth)
+    singlePrice.textContent = (parseFloat(addedSubPrice) / (parseInt(nSalaries.value) * daysWorkMonth)).toFixed(2)
 }
 
 // Moving throught the form
@@ -460,6 +460,7 @@ coffeeGrain.addEventListener('click', () => {
     coffeeCapsChecked = false
 
     removeDnone(machineContent)
+    resumeCoffeeText.textContent = "grain"
 
     // Calculate the price
     coffeeGrainPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
@@ -498,6 +499,7 @@ coffeeCapsules.addEventListener('click', () => {
     coffeeGrainChecked = false
 
     removeDnone(machineContent)
+    resumeCoffeeText.textContent = "capsules"
   
     // Calculate the price
     coffeeCapsPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
@@ -589,7 +591,7 @@ subTeaYes.addEventListener('click', () => {
 
     teaPrice = nSalariesPresents * teaPercentageConsumption * teaDayConsumption * daysWorkMonth * singleTeaPrice
 
-    resumeTeaPrice.textContent = teaPrice
+    resumeTeaPrice.textContent = teaPrice.toFixed(2)
 
     if(securityPriceTea === false) {
         addingToPrice(teaPrice)
