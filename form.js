@@ -191,7 +191,6 @@ const deductToPrice = (currentPrice) => {
 nextButton.addEventListener('click', () => {
     if(indexSlide < 1) {
         nSalariesPresents = parseFloat(nSalaries.value) * (5 - parseInt(jourTravail.value)) / 5
-        console.log(nSalariesPresents)
   }
 
     // Conditionnal informations company
@@ -304,6 +303,11 @@ backButton.addEventListener('click', () => {
     if(indexSlide < 1) {
         addDnone(backButton)
         addDnone(aboResume)
+
+        // Reset value
+        nSalaries.value = 0
+        jourTravail.value = 1
+        pointConso.value = 1
     }
 
     if(indexSlide < 6) {
@@ -325,8 +329,6 @@ form.addEventListener('keyup', () => {
     }
 
     // Conditionnal visibility postal message
-    console.log(postalField.value)
-
     if((postalField.value).length > 2) {
         if((postalField.value).substring(0, 2) != "75" && (postalField.value).substring(0, 2) != "92" && (postalField.value).substring(0, 2) != "93" && (postalField.value).substring(0, 2) != "94" && (postalField.value).substring(0, 2) != "95") {
             removeDnone(postalMessage)
