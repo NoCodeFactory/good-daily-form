@@ -815,6 +815,36 @@ subServiceNo.addEventListener('click', () => {
     securityPriceService = false
 })
 
+borneCoffeeCheck.addEventListener('click', () => {
+    removeDnone(messageServiceCheck)
+    borneCoffeeCheck.checked = !borneCoffeeCheck.checked
+
+    if(borneCoffeeCheck.checked === true) {
+        removeDnone(resumeServiceSubOptionCoffee)
+    } else {
+        addDnone(resumeServiceSubOptionCoffee)
+    }
+
+    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
+        addDnone(messageServiceCheck)
+    }
+})
+
+borneCapsCheck.addEventListener('click', () => {
+    removeDnone(messageServiceCheck)
+    borneCapsCheck.checked = !borneCapsCheck.checked
+    
+    if(borneCapsCheck.checked === true) {
+        removeDnone(resumeServiceSubOptionCaps)
+    } else {
+        addDnone(resumeServiceSubOptionCaps)
+    }
+
+    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
+        addDnone(messageServiceCheck)
+    }
+})
+
 bornePaperCardboard.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
     bornePaperCardboardCheck.checked = !bornePaperCardboardCheck.checked
@@ -825,7 +855,7 @@ bornePaperCardboard.addEventListener('click', () => {
         addDnone(resumeServiceSubOptionPaperCardboard)
     }
 
-    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
+    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
@@ -840,7 +870,7 @@ bornePlastic.addEventListener('click', () => {
         addDnone(resumeServiceSubOptionPlastic)
     }
 
-    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
+    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
@@ -855,7 +885,7 @@ borneCan.addEventListener('click', () => {
         addDnone(resumeServiceSubOptionCan)
     }
 
-    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
+    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
@@ -870,7 +900,7 @@ borneGlass.addEventListener('click', () => {
         addDnone(resumeServiceSubOptionGlass)
     }
 
-    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
+    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
@@ -885,7 +915,7 @@ borneDib.addEventListener('click', () => {
         addDnone(resumeServiceSubOptionDib)
     }
 
-    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
+    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
