@@ -153,6 +153,13 @@ const nameStreetForm = document.querySelector('#name-street-form')
 const countryForm = document.querySelector('#country-form')
 const postalField = document.querySelector('#postal-field')
 
+// Hidden fields
+let oCoffeePrice = document.querySelector('#o-coffee-price')
+let oTeaPrice = document.querySelector('#o-tea-price')
+let oSnacksPrice = document.querySelector('#o-snacks-price')
+let oFruitsPrice = document.querySelector('#o-fruits-price')
+let oServicePrice = document.querySelector('#o-service-price')
+
 
 // Informations variables
 
@@ -284,6 +291,12 @@ nextButton.addEventListener('click', () => {
     if(indexSlide === 6) {
         addDnone(nextButton)
         removeDnone(submitFormButton)
+
+        oCoffeePrice.value = coffeePrice.toFixed(2)
+        oTeaPrice.value = teaPrice.toFixed(2)
+        oSnacksPrice = snacksPriceTotal.toFixed(2)
+        oFruitsPrice = fruitsPriceTotal.toFixed(2)
+        oServicePrice = parseInt(resumeServicePrice).toFixed(2)
   }
   
     if(indexSlide >= 1) {
