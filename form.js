@@ -159,6 +159,8 @@ let oTeaPrice = document.querySelector('#o-tea-price')
 let oSnacksPrice = document.querySelector('#o-snacks-price')
 let oFruitsPrice = document.querySelector('#o-fruits-price')
 let oServicePrice = document.querySelector('#o-service-price')
+let oTotalPrice = document.querySelector('#o-total-price')
+let oSinglePrice = document.querySelector('#o-single-price')
 
 
 // Informations variables
@@ -297,6 +299,8 @@ nextButton.addEventListener('click', () => {
         oSnacksPrice = snacksPriceTotal.toFixed(2)
         oFruitsPrice = fruitsPriceTotal.toFixed(2)
         oServicePrice = parseInt(resumeServicePrice).toFixed(2)
+	oTotalPrice = addedSubPrice.toFixed(2)
+	oSinglePrice = parseFloat(singlePrice.textContent)
   }
   
     if(indexSlide >= 1) {
@@ -791,9 +795,9 @@ subServiceYes.addEventListener('click', () => {
         if(pointConso.value === "1") {
             collectPriceTotal = collectPrice * 1
         } else if (pointConso.value === "2") {
-            collectPriceTotal = collectPrice = "Hors scope"
+            collectPriceTotal = 0
         } else if (pointConso.value === "3") {
-            collectPriceTotal = collectPrice = "Hors scope"
+            collectPriceTotal = 0
         }
         resumeServicePrice.textContent = collectPriceTotal
     }
@@ -802,14 +806,14 @@ subServiceYes.addEventListener('click', () => {
     if(coffeeGrainChecked === true) {
         borneCoffeeCheck.click()
         borneCoffeeCheck.disabled = true
-        borneCoffee.classList.add('disabled-class')
+	removeDnone(resumeServiceSubOptionCoffee)
     }
 
     // If coffee capsules was choosed
     if(coffeeCapsChecked === true) {
         borneCapsCheck.click()
         borneCapsCheck.disabled = true
-        borneCaps.classList.add('disabled-class')
+	removeDnone(resumeServiceSubOptionCaps)
     }
 
     if(securityPriceService === false) {
