@@ -304,11 +304,11 @@ nextButton.addEventListener('click', () => {
 
         oCoffeePrice.value = coffeePrice.toFixed(2)
         oTeaPrice.value = teaPrice.toFixed(2)
-        oSnacksPrice = snacksPriceTotal.toFixed(2)
-        oFruitsPrice = fruitsPriceTotal.toFixed(2)
-        oServicePrice = parseFloat(resumeServicePrice.textContent).toFixed(2)
-	oTotalPrice = addedSubPrice.toFixed(2)
-	oSinglePrice = parseFloat(singlePrice.textContent)
+        oSnacksPrice.value = snacksPriceTotal.toFixed(2)
+        oFruitsPrice.value = fruitsPriceTotal.toFixed(2)
+        oServicePrice.value = parseFloat(resumeServicePrice.textContent).toFixed(2)
+	oTotalPrice.value = addedSubPrice.toFixed(2)
+	oSinglePrice.value = parseFloat(singlePrice.textContent)
   }
   
     if(indexSlide >= 1) {
