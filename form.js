@@ -848,7 +848,7 @@ borneCoffee.addEventListener('click', () => {
 
     if(borneCoffeeCheck.checked === true && borneCoffeeCheck.disabled === false) {
         removeDnone(resumeServiceSubOptionCoffee)
-    } else {
+    } else if(borneCoffeeCheck.checked === false && borneCoffeeCheck.disabled === false) {
         addDnone(resumeServiceSubOptionCoffee)
     }
 })
@@ -858,7 +858,7 @@ borneCaps.addEventListener('click', () => {
     
     if(borneCapsCheck.checked === true && borneCapsCheck.disabled === false) {
         removeDnone(resumeServiceSubOptionCaps)
-    } else {
+    } else if(borneCapsCheck.checked === false && borneCapsCheck.disabled === false) {
         addDnone(resumeServiceSubOptionCaps)
     }
 })
