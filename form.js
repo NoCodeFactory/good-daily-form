@@ -11,6 +11,9 @@ const backButton = document.querySelector('#back-button')
 const leftArrow = document.querySelector('#left-arrow')
 
 	// Messages variables
+let messageCommercial = document.querySelector('#message-commercial').textContent
+commercialContact = messageCommercial
+commercialContact02 = messageCommercial
 const commercialContact = document.querySelector('#commercial-contact')
 const commercialContact02 = document.querySelector('#commercial-contact-02')
 const conseil = document.querySelector('#conseil')
@@ -307,8 +310,8 @@ nextButton.addEventListener('click', () => {
         oSnacksPrice.value = snacksPriceTotal.toFixed(2)
         oFruitsPrice.value = fruitsPriceTotal.toFixed(2)
         oServicePrice.value = parseFloat(resumeServicePrice.textContent).toFixed(2)
-	oTotalPrice.value = addedSubPrice.toFixed(2)
-	oSinglePrice.value = parseFloat(singlePrice.textContent)
+        oTotalPrice.value = addedSubPrice.toFixed(2)
+        oSinglePrice.value = parseFloat(singlePrice.textContent)
   }
   
     if(indexSlide >= 1) {
@@ -801,7 +804,7 @@ subServiceYes.addEventListener('click', () => {
 
     if(nSalariesPresents >= 61) {
         if(pointConso.value === "1") {
-            collectPriceTotal = collectPrice * 1
+            collectPriceTotal = collectPrice * 3
         } else if (pointConso.value === "2") {
             collectPriceTotal = 0
         } else if (pointConso.value === "3") {
@@ -814,14 +817,14 @@ subServiceYes.addEventListener('click', () => {
     if(coffeeGrainChecked === true) {
         borneCoffeeCheck.click()
         borneCoffeeCheck.disabled = true
-	removeDnone(resumeServiceSubOptionCoffee)
+	    removeDnone(resumeServiceSubOptionCoffee)
     }
 
     // If coffee capsules was choosed
     if(coffeeCapsChecked === true) {
         borneCapsCheck.click()
         borneCapsCheck.disabled = true
-	removeDnone(resumeServiceSubOptionCaps)
+	    removeDnone(resumeServiceSubOptionCaps)
     }
 
     if(securityPriceService === false) {
@@ -840,7 +843,7 @@ subServiceNo.addEventListener('click', () => {
     securityPriceService = false
 })
 
-borneCoffeeCheck.addEventListener('click', () => {
+borneCoffee.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
     borneCoffeeCheck.checked = !borneCoffeeCheck.checked
 
@@ -855,7 +858,7 @@ borneCoffeeCheck.addEventListener('click', () => {
     }
 })
 
-borneCapsCheck.addEventListener('click', () => {
+borneCaps.addEventListener('click', () => {
     removeDnone(messageServiceCheck)
     borneCapsCheck.checked = !borneCapsCheck.checked
     
