@@ -328,6 +328,10 @@ nextButton.addEventListener('click', () => {
 	}
 })
 
+if(indexSlide == 0) {
+    addDnone(backButton)
+}
+
 backButton.addEventListener('click', () => {
 	if(indexSlide >= 1) {
   	leftArrow.click()
