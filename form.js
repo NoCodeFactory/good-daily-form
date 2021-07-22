@@ -12,10 +12,10 @@ const leftArrow = document.querySelector('#left-arrow')
 
 	// Messages variables
 let messageCommercial = document.querySelector('#message-commercial').textContent
-commercialContact = messageCommercial
-commercialContact02 = messageCommercial
-const commercialContact = document.querySelector('#commercial-contact')
-const commercialContact02 = document.querySelector('#commercial-contact-02')
+let commercialContact = document.querySelector('#commercial-contact')
+let commercialContact02 = document.querySelector('#commercial-contact-02')
+commercialContact.textContent = messageCommercial
+commercialContact02.textContent = messageCommercial
 const conseil = document.querySelector('#conseil')
 const messageServiceCheck = document.querySelector('#message-service-check')
 const postalMessage = document.querySelector('#postal-message')
