@@ -852,10 +852,6 @@ borneCoffee.addEventListener('click', () => {
     } else {
         addDnone(resumeServiceSubOptionCoffee)
     }
-
-    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
-        addDnone(messageServiceCheck)
-    }
 })
 
 borneCaps.addEventListener('click', () => {
@@ -866,10 +862,6 @@ borneCaps.addEventListener('click', () => {
         removeDnone(resumeServiceSubOptionCaps)
     } else {
         addDnone(resumeServiceSubOptionCaps)
-    }
-
-    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
-        addDnone(messageServiceCheck)
     }
 })
 
@@ -883,7 +875,7 @@ bornePaperCardboard.addEventListener('click', () => {
         addDnone(resumeServiceSubOptionPaperCardboard)
     }
 
-    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
+    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
@@ -898,7 +890,7 @@ bornePlastic.addEventListener('click', () => {
         addDnone(resumeServiceSubOptionPlastic)
     }
 
-    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
+    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
@@ -913,7 +905,7 @@ borneCan.addEventListener('click', () => {
         addDnone(resumeServiceSubOptionCan)
     }
 
-    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
+    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
@@ -928,7 +920,7 @@ borneGlass.addEventListener('click', () => {
         addDnone(resumeServiceSubOptionGlass)
     }
 
-    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
+    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
@@ -943,7 +935,7 @@ borneDib.addEventListener('click', () => {
         addDnone(resumeServiceSubOptionDib)
     }
 
-    if(borneCoffeeCheck.checked === false && borneCapsCheck.checked === false && bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
+    if(bornePaperCardboardCheck.checked === false && bornePlasticCheck.checked === false && borneCanCheck.checked === false && borneGlassCheck.checked === false && borneDibCheck.checked === false) {
         addDnone(messageServiceCheck)
     }
 })
