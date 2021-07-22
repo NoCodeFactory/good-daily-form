@@ -190,6 +190,10 @@ const addingToPrice = (currentPrice) => {
     addedSubPrice = addedSubPrice + currentPrice
     subscriptionPrice.textContent = addedSubPrice.toFixed(2)
     singlePrice.textContent = (parseFloat(addedSubPrice) / (parseInt(nSalaries.value) * daysWorkMonth)).toFixed(2)
+
+    if(singlePrice.textContent === "NaN") {
+        singlePrice.textContent = "0"
+    }
 }
 
 //  Deduct the current price from the total price
@@ -197,6 +201,10 @@ const deductToPrice = (currentPrice) => {
     addedSubPrice = addedSubPrice - currentPrice
     subscriptionPrice.textContent = addedSubPrice.toFixed(2)
     singlePrice.textContent = (parseFloat(addedSubPrice) / (parseInt(nSalaries.value) * daysWorkMonth)).toFixed(2)
+
+    if(singlePrice.textContent === "NaN") {
+        singlePrice.textContent = "0"
+    }
 }
 
 // Moving throught the form
