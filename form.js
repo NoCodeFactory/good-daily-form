@@ -299,10 +299,12 @@ nextButton.addEventListener('click', () => {
 	    
         if(resumeServiceSubOptionCoffee.textContent != "") {
           borneCoffeeCheck.checked = true
+          borneCoffeeCheck.disabled = true
         }
 
         if(resumeServiceSubOptionCaps.textContent != "") {
           borneCapsCheck.checked = true
+          borneCapsCheck.disabled = true
         }
 
         oCoffeePrice.value = coffeePrice.toFixed(2)
