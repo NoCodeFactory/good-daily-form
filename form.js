@@ -815,15 +815,15 @@ subServiceYes.addEventListener('click', () => {
 
     // If coffee grain was choosed
     if(coffeeGrainChecked === true) {
-        borneCoffeeCheck.click()
-        borneCoffee.disabled = true
+        borneCoffee.click()
+        borneCoffeeCheck.disabled = true
 	    removeDnone(resumeServiceSubOptionCoffee)
     }
 
     // If coffee capsules was choosed
     if(coffeeCapsChecked === true) {
-        borneCapsCheck.click()
-        borneCaps.disabled = true
+        borneCaps.click()
+        borneCapsCheck.disabled = true
 	    removeDnone(resumeServiceSubOptionCaps)
     }
 
@@ -846,7 +846,7 @@ subServiceNo.addEventListener('click', () => {
 borneCoffee.addEventListener('click', () => {
     borneCoffeeCheck.checked = !borneCoffeeCheck.checked
 
-    if(borneCoffeeCheck.checked === true) {
+    if(borneCoffeeCheck.checked === true && borneCoffeeCheck.disabled === false) {
         removeDnone(resumeServiceSubOptionCoffee)
     } else {
         addDnone(resumeServiceSubOptionCoffee)
@@ -856,7 +856,7 @@ borneCoffee.addEventListener('click', () => {
 borneCaps.addEventListener('click', () => {
     borneCapsCheck.checked = !borneCapsCheck.checked
     
-    if(borneCapsCheck.checked === true) {
+    if(borneCapsCheck.checked === true && borneCapsCheck.disabled === false) {
         removeDnone(resumeServiceSubOptionCaps)
     } else {
         addDnone(resumeServiceSubOptionCaps)
