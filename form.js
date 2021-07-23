@@ -19,6 +19,7 @@ commercialContact02.textContent = messageCommercial
 const conseil = document.querySelector('#conseil')
 const messageServiceCheck = document.querySelector('#message-service-check')
 const postalMessage = document.querySelector('#postal-message')
+const seeAboResume = document.querySelector('#see-abo-resume')
 	
   // Content resume variables
 const aboResume = document.querySelector('#subscription-resume')
@@ -212,6 +213,12 @@ nextButton.addEventListener('click', () => {
     if(indexSlide < 1) {
         nSalariesPresents = parseFloat(nSalaries.value) * (5 - parseInt(jourTravail.value)) / 5
   }
+	
+    if(indexSlide === 0) {
+	addDnone(seeAboResume)    
+    } else {
+    	removeDnone(seeAboResume)
+    }
 
     // Conditionnal informations company
     if(indexSlide === 0 && nSalaries.value != "" && jourTravail.value != "" && pointConso.value != "") {
