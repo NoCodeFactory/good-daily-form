@@ -836,6 +836,7 @@ subServiceYes.addEventListener('click', () => {
     if(coffeeGrainChecked === true) {
         borneCoffee.click()
         borneCoffeeCheck.disabled = true
+        borneCoffeeCheck.checked = true
 	    removeDnone(resumeServiceSubOptionCoffee)
     }
 
@@ -843,6 +844,7 @@ subServiceYes.addEventListener('click', () => {
     if(coffeeCapsChecked === true) {
         borneCaps.click()
         borneCapsCheck.disabled = true
+        borneCapsCheck.checked = true
 	    removeDnone(resumeServiceSubOptionCaps)
     }
 
