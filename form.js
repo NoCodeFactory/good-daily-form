@@ -420,6 +420,7 @@ subCoffeeNo.addEventListener('click', () => {
     addDnone(subCoffeeOptions)
     subCoffee.textContent = "Non"
 
+    deductToPrice(coffeePrice)
     coffeePrice = 0
     serviceSecurityPrice = false
 })
@@ -521,6 +522,10 @@ coffeeGrain.addEventListener('click', () => {
     }
 
     if(machineYesChecked === true && securityPriceCoffeeGrain === false && securityPriceCoffeeAdds === true) {
+        deductToPrice(machinePrice)
+        machinePrice = 0
+        machinePriceCalculation()
+        coffeeGrainPrice += machinePrice
         coffeeGrainPrice += addsPriceTotal
         resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
     }
@@ -560,6 +565,10 @@ coffeeCapsules.addEventListener('click', () => {
       }
 
     if(machineYesChecked === true && securityPriceCoffeeCaps === false && securityPriceCoffeeAdds === true) {
+        deductToPrice(machinePrice)
+        machinePrice = 0
+        machinePriceCalculation()
+        coffeeCapsPrice += machinePrice
         coffeeCapsPrice += addsPriceTotal
         resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
     }
