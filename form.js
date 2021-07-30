@@ -324,7 +324,7 @@ nextButton.addEventListener('click', () => {
         oTeaPrice.value = teaPrice.toFixed(2)
         oSnacksPrice.value = snacksPriceTotal.toFixed(2)
         oFruitsPrice.value = fruitsPriceTotal.toFixed(2)
-        oServicePrice.value = parseFloat(resumeServicePrice.textContent).toFixed(2)
+        oServicePrice.value = collectPriceTotal.toFixed(2)
         oTotalPrice.value = addedSubPrice.toFixed(2)
         oSinglePrice.value = parseFloat(singlePrice.textContent)
   }
