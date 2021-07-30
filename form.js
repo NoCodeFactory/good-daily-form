@@ -211,7 +211,7 @@ const deductToPrice = (currentPrice) => {
 // Moving throught the form
 nextButton.addEventListener('click', () => {
     if(indexSlide < 1) {
-        nSalariesPresents = parseFloat(nSalaries.value) * (5 - parseInt(jourTravail.value)) / 5
+        nSalariesPresents = parseFloat(nSalaries.value) * (5 - parseFloat(jourTravail.value)) / 5
   }
 	
     if(indexSlide === 0) {
@@ -420,6 +420,7 @@ subCoffeeNo.addEventListener('click', () => {
     addDnone(subCoffeeOptions)
     subCoffee.textContent = "Non"
 
+    coffeePrice = 0
     serviceSecurityPrice = false
 })
 
@@ -489,11 +490,11 @@ const machinePriceCalculation = () => {
         }
     
         if(pointConso.value === "2") {
-          machinePrice = "hors scope"
+          machinePrice = "0"
         }
     
         if(pointConso.value === "3") {
-          machinePrice = "hors scope"
+          machinePrice = "0"
         }
       }
 
@@ -559,7 +560,7 @@ coffeeCapsules.addEventListener('click', () => {
       }
 
     if(machineYesChecked === true && securityPriceCoffeeCaps === false && securityPriceCoffeeAdds === true) {
-        coffeeGrainPrice += addsPriceTotal
+        coffeeCapsPrice += addsPriceTotal
         resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
     }
 
