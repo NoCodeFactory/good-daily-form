@@ -521,7 +521,7 @@ coffeeGrain.addEventListener('click', () => {
     // Calculate the price
     coffeeGrainPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
 
-    if(machineYesChecked === true && securityPriceCoffeeGrain === false) {
+    if(machineYesChecked === true && securityPriceCoffeeGrain === false && securityPriceCoffeeAdds === false) {
       deductToPrice(machinePrice)
       machinePrice = 0
       machinePriceCalculation()
@@ -565,7 +565,7 @@ coffeeCapsules.addEventListener('click', () => {
     // Calculate the price
     coffeeCapsPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
 
-    if(machineYesChecked === true && securityPriceCoffeeCaps === false) {
+    if(machineYesChecked === true && securityPriceCoffeeCaps === false && securityPriceCoffeeAdds === false) {
         deductToPrice(machinePrice)
         machinePrice = 0
         machinePriceCalculation()
