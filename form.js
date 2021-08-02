@@ -427,17 +427,7 @@ subCoffeeNo.addEventListener('click', () => {
     addDnone(subCoffeeOptions)
     subCoffee.textContent = "Non"
 
-    if(coffeeGrainChecked === true) {
-        deductToPrice(coffeeGrainPrice)
-    }
-
-    if(coffeeCapsChecked === true) {
-        deductToPrice(coffeeCapsPrice)
-    }
-
-    deductToPrice(machinePrice)
-    deductToPrice(addsPriceTotal)
-
+    deductToPrice(coffeePrice)
     coffeePrice = 0
     securityPriceCoffee = false
 })
