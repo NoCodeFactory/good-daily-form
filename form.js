@@ -26,6 +26,7 @@ const aboResume = document.querySelector('#subscription-resume')
 let subscriptionPrice = document.querySelector('#subscription-price')
 let singlePrice = document.querySelector('#single-price')
 let addedSubPrice = 0
+let securityPriceCoffee = false
 let securityPriceCoffeeGrain = false
 let securityPriceCoffeeCaps = false
 let securityPriceMachine = false
@@ -412,7 +413,10 @@ subCoffeeYes.addEventListener('click', () => {
     removeDnone(coffeeTypeContent)
     subCoffee.textContent = "Oui"
 
-    addedSubPrice = coffeePrice
+    if(securityPriceCoffee === false) {
+        addingToPrice(coffeePrice)  
+        securityPriceCoffee = true
+    }
 })
 
 subCoffeeNo.addEventListener('click', () => {
@@ -844,7 +848,7 @@ subServiceYes.addEventListener('click', () => {
 
     // If coffee grain was choosed
     if(coffeeGrainChecked === true) {
-        borneCoffee.click()
+        borneCoffeeCheck.click()
         borneCoffeeCheck.checked = true
         borneCoffeeCheck.disabled = true
 	    removeDnone(resumeServiceSubOptionCoffee)
@@ -852,7 +856,7 @@ subServiceYes.addEventListener('click', () => {
 
     // If coffee capsules was choosed
     if(coffeeCapsChecked === true) {
-        borneCaps.click()
+        borneCapsCheck.click()
         borneCapsCheck.checked = true
         borneCapsCheck.disabled = true
 	    removeDnone(resumeServiceSubOptionCaps)
@@ -872,6 +876,29 @@ subServiceNo.addEventListener('click', () => {
     deductToPrice(collectPriceTotal)
     collectPriceTotal = 0
     securityPriceService = false
+
+    borneCoffeeCheck.disabled = false
+    borneCoffeeCheck.click()
+    borneCoffeeCheck.checked = false
+
+    borneCapsCheck.disabled = false
+    borneCapsCheck.click()
+    borneCoffeeCheck.checked = false
+
+    bornePaperCardboardCheck.click()
+    bornePaperCardboardCheck.checked = false
+
+    bornePlasticCheck.click()
+    bornePlasticCheck.checked = false
+
+    borneCanCheck.click()
+    borneCanCheck.checked = false
+
+    borneGlassCheck.click()
+    borneGlassCheck.checked = false
+
+    borneDibCheck.click()
+    borneDibCheck.checked = false
 })
 
 borneCoffee.addEventListener('click', () => {
