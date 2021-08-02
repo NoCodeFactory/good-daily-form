@@ -611,6 +611,7 @@ coffeeCapsules.addEventListener('click', () => {
         machinePriceCalculation()
         coffeeCapsPrice += machinePrice
 
+        deductToPrice(addsPriceTotal)
         coffeeCapsPrice += addsPriceTotal
         
         coffeePrice = coffeeCapsPrice
