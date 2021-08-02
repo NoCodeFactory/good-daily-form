@@ -535,6 +535,7 @@ coffeeGrain.addEventListener('click', () => {
         coffeeGrainPrice += machinePrice
         coffeeGrainPrice += addsPriceTotal
         resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+        securityPriceCoffeeGrain = true
     }
     
     // Security for not spamming
@@ -578,6 +579,7 @@ coffeeCapsules.addEventListener('click', () => {
         coffeeCapsPrice += machinePrice
         coffeeCapsPrice += addsPriceTotal
         resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+        securityPriceCoffeeCaps = true
     }
 
     // Security for not spamming
