@@ -414,6 +414,7 @@ subCoffeeYes.addEventListener('click', () => {
     subCoffee.textContent = "Oui"
 
     if(securityPriceCoffee === false) {
+        coffeePrice = parseFloat(resumeCoffeePrice.textContent)
         addingToPrice(coffeePrice)  
         securityPriceCoffee = true
     }
@@ -424,9 +425,19 @@ subCoffeeNo.addEventListener('click', () => {
     addDnone(subCoffeeOptions)
     subCoffee.textContent = "Non"
 
-    deductToPrice(coffeePrice)
+    if(coffeeGrainChecked === true) {
+        deductToPrice(coffeeGrainPrice)
+    }
+
+    if(coffeeCapsChecked === true) {
+        deductToPrice(coffeeCapsPrice)
+    }
+
+    deductToPrice(machinePrice)
+    deductToPrice(addsPriceTotal)
+
     coffeePrice = 0
-    serviceSecurityPrice = false
+    securityPriceCoffee = false
 })
 
 const machinePriceCalculation = () => {
