@@ -541,12 +541,13 @@ coffeeGrain.addEventListener('click', () => {
     if(machineYesChecked === true && securityPriceCoffeeGrain === false && securityPriceCoffeeAdds === true) {
         deductToPrice(coffeeCapsPrice)
         coffeeCapsPrice = 0
-
+        
         deductToPrice(machinePrice)
         machinePrice = 0
         machinePriceCalculation()
         coffeeGrainPrice += machinePrice
         
+        deductToPrice(addsPriceTotal)
         coffeeGrainPrice += addsPriceTotal
 
         coffeePrice = coffeeGrainPrice
