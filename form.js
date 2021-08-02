@@ -225,6 +225,7 @@ nextButton.addEventListener('click', () => {
     if(indexSlide === 0 && nSalaries.value != "" && jourTravail.value != "" && pointConso.value != "") {
         rightArrow.click()
         indexSlide += 1
+        removeDnone(aboResume)
         addDnone(errorMessage)
     } else {
         removeDnone(errorMessage)
