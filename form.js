@@ -312,14 +312,6 @@ nextButton.addEventListener('click', () => {
     if(indexSlide === 6) {
         addDnone(nextButton)
         removeDnone(submitFormButton)
-	    
-        if(resumeServiceSubOptionCoffee.textContent != "") {
-          borneCoffeeCheck.checked = true
-        }
-
-        if(resumeServiceSubOptionCaps.textContent != "") {
-          borneCapsCheck.checked = true
-        }
 
         oCoffeePrice.value = coffeePrice.toFixed(2)
         oTeaPrice.value = teaPrice.toFixed(2)
