@@ -559,6 +559,9 @@ coffeeGrain.addEventListener('click', () => {
         deductToPrice(machinePrice)
         machinePrice = 0
 
+        deductToPrice(addsPriceTotal)
+        coffeeGrainPrice += addsPriceTotal
+
         coffeePrice = coffeeGrainPrice
         resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
 
@@ -637,6 +640,9 @@ coffeeCapsules.addEventListener('click', () => {
 
         deductToPrice(machinePrice)
         machinePrice = 0
+
+        deductToPrice(addsPriceTotal)
+        coffeeCapsPrice += addsPriceTotal
 
         coffeePrice = coffeePriceCaps
         resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
