@@ -322,7 +322,7 @@ nextButton.addEventListener('click', () => {
         oSinglePrice.value = parseFloat(singlePrice.textContent)
   }
   
-    if(indexSlide >= 1) {
+    if(indexSlide >= 2) {
         removeDnone(backButton)
         removeDnone(aboResume)
 	}
@@ -338,14 +338,9 @@ backButton.addEventListener('click', () => {
     indexSlide -= 1
   }
   
-    if(indexSlide < 1) {
+    if(indexSlide < 2) {
         addDnone(backButton)
         addDnone(aboResume)
-
-        // Reset value
-        nSalaries.value = 0
-        jourTravail.value = 1
-        pointConso.value = 1
     }
 
     if(indexSlide < 6) {
