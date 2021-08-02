@@ -551,6 +551,21 @@ coffeeGrain.addEventListener('click', () => {
         securityPriceCoffeeGrain = true
         securityPriceCoffeeCaps = false
     }
+
+    if(machineYesChecked === false && securityPriceCoffeeGrain === false && securityPriceCoffeeAdds === true) {
+        deductToPrice(coffeeCapsPrice)
+        coffeeCapsPrice = 0
+
+        deductToPrice(machinePrice)
+        machinePrice = 0
+
+        coffeePrice = coffeeGrainPrice
+        resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+
+        addingToPrice(coffeePrice)
+        securityPriceCoffeeGrain = true
+        securityPriceCoffeeCaps = false
+    }
     
     // Security for not spamming
     if(securityPriceCoffeeGrain === false) {
@@ -614,6 +629,21 @@ coffeeCapsules.addEventListener('click', () => {
         addingToPrice(coffeePrice)
         securityPriceCoffeeCaps = true
         securityPriceCoffeeGrain = false
+    }
+
+    if(machineYesChecked === false && securityPriceCoffeeCaps === false && securityPriceCoffeeAdds === true) {
+        deductToPrice(coffeeGrainPrice)
+        coffeeGrainPrice = 0
+
+        deductToPrice(machinePrice)
+        machinePrice = 0
+
+        coffeePrice = coffeePriceCaps
+        resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+
+        addingToPrice(coffeePrice)
+        securityPriceCoffeeGrain = true
+        securityPriceCoffeeCaps = false
     }
 
     // Security for not spamming
