@@ -928,28 +928,42 @@ subServiceNo.addEventListener('click', () => {
     collectPriceTotal = 0
     securityPriceService = false
 
-    borneCoffeeCheck.disabled = false
-    borneCoffee.click()
-    borneCoffeeCheck.checked = false
+    if(borneCoffeeCheck === true) {
+        borneCoffeeCheck.disabled = false
+        borneCoffee.click()
+        borneCoffeeCheck.checked = false
+    }
 
-    borneCapsCheck.disabled = false
-    borneCaps.click()
-    borneCapsCheck.checked = false
+    if(borneCapsCheck === true) {
+        borneCapsCheck.disabled = false
+        borneCaps.click()
+        borneCapsCheck.checked = false
+    }
 
-    bornePaperCardboard.click()
-    bornePaperCardboardCheck.checked = false
+    if(bornePaperCardboardCheck === true) {
+        bornePaperCardboard.click()
+        bornePaperCardboardCheck.checked = false
+    }
 
-    bornePlastic.click()
-    bornePlasticCheck.checked = false
+    if(bornePlasticCheck === true) {
+        bornePlastic.click()
+        bornePlasticCheck.checked = false
+    }
 
-    borneCan.click()
-    borneCanCheck.checked = false
+    if(borneCanCheck === true) {
+        borneCan.click()
+        borneCanCheck.checked = false
+    }
 
-    borneGlass.click()
-    borneGlassCheck.checked = false
+    if(borneGlassCheck === true) {
+        borneGlass.click()
+        borneGlassCheck.checked = false*
+    }
 
-    borneDib.click()
-    borneDibCheck.checked = false
+    if(borneDibCheck === true) {
+        borneDib.click()
+        borneDibCheck.checked = false
+    }
 })
 
 borneCoffee.addEventListener('click', () => {
