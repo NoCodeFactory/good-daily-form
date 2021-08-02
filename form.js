@@ -899,17 +899,15 @@ subServiceYes.addEventListener('click', () => {
 
     // If coffee grain was choosed
     if(coffeeGrainChecked === true) {
-        borneCoffee.click()
-        borneCoffeeCheck.checked = true
         borneCoffeeCheck.disabled = true
+        borneCoffeeCheck.click()
 	    removeDnone(resumeServiceSubOptionCoffee)
     }
 
     // If coffee capsules was choosed
     if(coffeeCapsChecked === true) {
-        borneCaps.click()
-        borneCapsCheck.checked = true
         borneCapsCheck.disabled = true
+        borneCapsCheck.click()
 	    removeDnone(resumeServiceSubOptionCaps)
     }
 
