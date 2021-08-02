@@ -427,6 +427,9 @@ subCoffeeNo.addEventListener('click', () => {
     addDnone(subCoffeeOptions)
     subCoffee.textContent = "Non"
 
+    machineNo.click()
+    addsCoffeeNo.click()
+
     deductToPrice(coffeePrice)
     coffeePrice = 0
     securityPriceCoffee = false
@@ -893,7 +896,7 @@ subServiceYes.addEventListener('click', () => {
 
     // If coffee grain was choosed
     if(coffeeGrainChecked === true) {
-        borneCoffeeCheck.click()
+        borneCoffee.click()
         borneCoffeeCheck.checked = true
         borneCoffeeCheck.disabled = true
 	    removeDnone(resumeServiceSubOptionCoffee)
@@ -901,7 +904,7 @@ subServiceYes.addEventListener('click', () => {
 
     // If coffee capsules was choosed
     if(coffeeCapsChecked === true) {
-        borneCapsCheck.click()
+        borneCaps.click()
         borneCapsCheck.checked = true
         borneCapsCheck.disabled = true
 	    removeDnone(resumeServiceSubOptionCaps)
@@ -923,26 +926,26 @@ subServiceNo.addEventListener('click', () => {
     securityPriceService = false
 
     borneCoffeeCheck.disabled = false
-    borneCoffeeCheck.click()
+    borneCoffee.click()
     borneCoffeeCheck.checked = false
 
     borneCapsCheck.disabled = false
-    borneCapsCheck.click()
-    borneCoffeeCheck.checked = false
+    borneCaps.click()
+    borneCapsCheck.checked = false
 
-    bornePaperCardboardCheck.click()
+    bornePaperCardboard.click()
     bornePaperCardboardCheck.checked = false
 
-    bornePlasticCheck.click()
+    bornePlastic.click()
     bornePlasticCheck.checked = false
 
-    borneCanCheck.click()
+    borneCan.click()
     borneCanCheck.checked = false
 
-    borneGlassCheck.click()
+    borneGlass.click()
     borneGlassCheck.checked = false
 
-    borneDibCheck.click()
+    borneDib.click()
     borneDibCheck.checked = false
 })
 
