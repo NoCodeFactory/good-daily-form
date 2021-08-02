@@ -522,19 +522,36 @@ coffeeGrain.addEventListener('click', () => {
     coffeeGrainPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * (coffeePricePerKg / coffeeConsumptionPerkg)
 
     if(machineYesChecked === true && securityPriceCoffeeGrain === false && securityPriceCoffeeAdds === false) {
+      deductToPrice(coffeeCapsPrice)
+      coffeeCapsPrice = 0
+
       deductToPrice(machinePrice)
       machinePrice = 0
       machinePriceCalculation()
       coffeeGrainPrice += machinePrice
+
+      coffeePrice = coffeeGrainPrice
+      resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+
+      addingToPrice(coffeePrice)
+      securityPriceCoffeeGrain = true
     }
 
     if(machineYesChecked === true && securityPriceCoffeeGrain === false && securityPriceCoffeeAdds === true) {
+        deductToPrice(coffeeCapsPrice)
+        coffeeCapsPrice = 0
+
         deductToPrice(machinePrice)
         machinePrice = 0
         machinePriceCalculation()
         coffeeGrainPrice += machinePrice
+        
         coffeeGrainPrice += addsPriceTotal
+
+        coffeePrice = coffeeGrainPrice
         resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+        
+        addingToPrice(coffeePrice)
         securityPriceCoffeeGrain = true
     }
     
@@ -566,19 +583,36 @@ coffeeCapsules.addEventListener('click', () => {
     coffeeCapsPrice = nSalariesPresents * coffeeDayConsumption * daysWorkMonth * coffeePriceCaps
 
     if(machineYesChecked === true && securityPriceCoffeeCaps === false && securityPriceCoffeeAdds === false) {
+        deductToPrice(coffeeGrainPrice)
+        coffeeGrainPrice = 0
+
         deductToPrice(machinePrice)
         machinePrice = 0
         machinePriceCalculation()
         coffeeCapsPrice += machinePrice
+
+        coffeePrice = coffeeCapsPrice
+        resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+
+        addingToPrice(coffeePrice)
+        securityPriceCoffeeCaps = true
       }
 
     if(machineYesChecked === true && securityPriceCoffeeCaps === false && securityPriceCoffeeAdds === true) {
+        deductToPrice(coffeeGrainPrice)
+        coffeeGrainPrice = 0
+
         deductToPrice(machinePrice)
         machinePrice = 0
         machinePriceCalculation()
         coffeeCapsPrice += machinePrice
+
         coffeeCapsPrice += addsPriceTotal
+        
+        coffeePrice = coffeeCapsPrice
         resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+        
+        addingToPrice(coffeePrice)
         securityPriceCoffeeCaps = true
     }
 
