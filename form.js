@@ -414,7 +414,9 @@ subCoffeeYes.addEventListener('click', () => {
     subCoffee.textContent = "Oui"
 
     if(securityPriceCoffee === false) {
-        coffeePrice = parseFloat(resumeCoffeePrice.textContent)
+        if(parseFloat(resumeCoffeePrice.textContent) > 0) {
+            coffeePrice = parseFloat(resumeCoffeePrice.textContent)
+        }
         addingToPrice(coffeePrice)  
         securityPriceCoffee = true
     }
