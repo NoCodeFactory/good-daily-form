@@ -957,7 +957,7 @@ subServiceNo.addEventListener('click', () => {
 
     if(borneGlassCheck === true) {
         borneGlass.click()
-        borneGlassCheck.checked = false*
+        borneGlassCheck.checked = false
     }
 
     if(borneDibCheck === true) {
