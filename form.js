@@ -444,6 +444,12 @@ subCoffeeNo.addEventListener('click', () => {
     // d-none on coffee sections
     addDnone(machineContent)
     addDnone(addsContent)
+
+    // Unlock securities for another try
+    securityPriceCoffeeGrain = false
+    securityPriceCoffeeCaps = false
+    securityPriceMachine = false
+    securityPriceCoffeeAdds = false
 })
 
 const machinePriceCalculation = () => {
