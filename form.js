@@ -408,16 +408,18 @@ subCoffeeYes.addEventListener('click', () => {
         addingToPrice(coffeePrice)  
         securityPriceCoffee = true
     }
+
+    subCoffeeNoChecked = false
 })
 
 subCoffeeNo.addEventListener('click', () => {
+    subCoffeeNoChecked = true
+
     addDnone(contentCoffee)
     addDnone(subCoffeeOptions)
     subCoffee.textContent = "Non"
 
     // Not giving wrong informations in the form post
-    addingToPrice(machinePrice)
-    addingToPrice(addsPriceTotal)
     machineNo.click()
     addsCoffeeNo.click()
     coffeeGrainChecked = false
@@ -427,8 +429,6 @@ subCoffeeNo.addEventListener('click', () => {
     coffeePrice = 0
     coffeeGrainPrice = 0
     coffeeCapsPrice = 0
-    machinePrice = 0
-    addsPriceTotal = 0
     securityPriceCoffee = false
 
     // Reset style radio button
@@ -720,11 +720,18 @@ machineNo.addEventListener('click', () => {
 
   removeDnone(addsContent)
 
-  deductToPrice(machinePrice)
-  coffeePrice = coffeePrice - machinePrice
-  resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
-  machinePrice = 0
-  securityPriceMachine = false
+  if(subCoffeeNoChecked === false) {
+      deductToPrice(machinePrice)
+      coffeePrice = coffeePrice - machinePrice
+      resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+      machinePrice = 0
+      securityPriceMachine = false
+  } else {
+      coffeePrice = coffeePrice - machinePrice
+      resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+      machinePrice = 0
+      securityPriceMachine = false
+  }
 })
 
 addsCoffeeYes.addEventListener('click', () => {
@@ -741,11 +748,19 @@ addsCoffeeYes.addEventListener('click', () => {
 })
 
 addsCoffeeNo.addEventListener('click', () => {
-  deductToPrice(addsPriceTotal)
-  coffeePrice -= addsPriceTotal
-  resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
-  addsPriceTotal = 0
-  securityPriceCoffeeAdds = false
+
+    if(subCoffeeNoChecked === false) {
+        deductToPrice(addsPriceTotal)
+        coffeePrice -= addsPriceTotal
+        resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+        addsPriceTotal = 0
+        securityPriceCoffeeAdds = false
+    } else {
+        coffeePrice -= addsPriceTotal
+        resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
+        addsPriceTotal = 0
+        securityPriceCoffeeAdds = false
+    }
 })
 
 // Tea functions
