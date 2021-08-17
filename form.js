@@ -330,16 +330,32 @@ nextButton.addEventListener('click', () => {
 
     if(nSalaries >= 100) {
         rightArrow.click()
-        subCoffeeNo.click()
-        rightArrow.click()
-        subTeaNo.click()
-        rightArrow.click()
-        subSnacksNo.click()
-        rightArrow.click()
-        subFruitsNo.click()
-        rightArrow.click()
-        subServiceNo.click()
-        rightArrow.click()
+        indexSlide += 1
+        if(indexSlide > 0) {
+            subCoffeeNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        if(indexSlide > 1) {
+            subTeaNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        if(indexSlide > 2) {
+            subSnacksNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        if(indexSlide > 3) {
+            subFruitsNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        if(indexSlide > 4) {
+            subServiceNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
         addDnone(backButton)
     }
 })
