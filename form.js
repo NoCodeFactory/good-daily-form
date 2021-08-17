@@ -309,6 +309,42 @@ nextButton.addEventListener('click', () => {
     } else if(indexSlide === 5 && subService.textContent === "") {
         removeDnone(errorMessage)
     }
+  
+    if(indexSlide >= 2) {
+        removeDnone(backButton)
+        removeDnone(aboResume)
+	}
+
+    if(parseInt(nSalaries.value) >= 100) {
+        rightArrow.click()
+        indexSlide += 1
+        if(indexSlide == 1) {
+            subCoffeeNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        if(indexSlide == 2) {
+            subTeaNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        if(indexSlide == 3) {
+            subSnacksNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        if(indexSlide == 4) {
+            subFruitsNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        if(indexSlide == 5) {
+            subServiceNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        addDnone(backButton)
+    }
 
     if(indexSlide === 6) {
         addDnone(nextButton)
@@ -322,44 +358,6 @@ nextButton.addEventListener('click', () => {
         oTotalPrice.value = addedSubPrice.toFixed(2)
         oSinglePrice.value = parseFloat(singlePrice.textContent)
   }
-  
-    if(indexSlide >= 2) {
-        removeDnone(backButton)
-        removeDnone(aboResume)
-	}
-
-    if(parseInt(nSalaries.value) >= 100) {
-        rightArrow.click()
-        indexSlide += 1
-        if(indexSlide > 0) {
-            rightArrow.click()
-            indexSlide += 1
-        }
-        if(indexSlide > 1) {
-            rightArrow.click()
-            indexSlide += 1
-        }
-        if(indexSlide > 2) {
-            rightArrow.click()
-            indexSlide += 1
-        }
-        if(indexSlide > 3) {
-            rightArrow.click()
-            indexSlide += 1
-        }
-        if(indexSlide > 4) {
-            rightArrow.click()
-            indexSlide += 1
-        }
-        if(indexSlide > 5) {
-            subCoffeeNo.click()
-            subTeaNo.click()
-            subSnacksNo.click()
-            subFruitsNo.click()
-            subServiceNo.click()
-        }
-        addDnone(backButton)
-    }
 })
 
 if(indexSlide == 0) {
