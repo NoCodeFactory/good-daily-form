@@ -225,25 +225,21 @@ nextButton.addEventListener('click', () => {
         if(parseInt(nSalaries.value) >= 100 && indexSlide == 1) {
             subCoffeeNo.click()
             indexSlide += 1
-            rightArrow.click()
         }
     
         if(parseInt(nSalaries.value) >= 100 && indexSlide == 2) {
             subTeaNo.click()
             indexSlide += 1
-            rightArrow.click()
         }
     
         if(parseInt(nSalaries.value) >= 100 && indexSlide == 3) {
             subSnacksNo.click()
             indexSlide += 1
-            rightArrow.click()
         }
     
         if(parseInt(nSalaries.value) >= 100 && indexSlide == 4) {
             subFruitsNo.click()
             indexSlide += 1
-            rightArrow.click()
         }
     
         if(parseInt(nSalaries.value) >= 100 && indexSlide == 5) {
