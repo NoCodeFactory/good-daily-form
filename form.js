@@ -216,9 +216,40 @@ nextButton.addEventListener('click', () => {
   }
 	
     if(indexSlide === 0) {
-	addDnone(seeAboResume)    
+	    addDnone(seeAboResume)    
     } else {
     	removeDnone(seeAboResume)
+    }
+
+    if(nSalaries >= 100) {
+        rightArrow.click()
+        indexSlide += 1
+        if(indexSlide > 0) {
+            subCoffeeNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        if(indexSlide > 1) {
+            subTeaNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        if(indexSlide > 2) {
+            subSnacksNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        if(indexSlide > 3) {
+            subFruitsNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        if(indexSlide > 4) {
+            subServiceNo.click()
+            rightArrow.click()
+            indexSlide += 1
+        }
+        addDnone(backButton)
     }
 
     // Conditionnal informations company
@@ -327,37 +358,6 @@ nextButton.addEventListener('click', () => {
         removeDnone(backButton)
         removeDnone(aboResume)
 	}
-
-    if(nSalaries >= 100) {
-        rightArrow.click()
-        indexSlide += 1
-        if(indexSlide > 0) {
-            subCoffeeNo.click()
-            rightArrow.click()
-            indexSlide += 1
-        }
-        if(indexSlide > 1) {
-            subTeaNo.click()
-            rightArrow.click()
-            indexSlide += 1
-        }
-        if(indexSlide > 2) {
-            subSnacksNo.click()
-            rightArrow.click()
-            indexSlide += 1
-        }
-        if(indexSlide > 3) {
-            subFruitsNo.click()
-            rightArrow.click()
-            indexSlide += 1
-        }
-        if(indexSlide > 4) {
-            subServiceNo.click()
-            rightArrow.click()
-            indexSlide += 1
-        }
-        addDnone(backButton)
-    }
 })
 
 if(indexSlide == 0) {
