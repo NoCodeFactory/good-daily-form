@@ -332,34 +332,31 @@ nextButton.addEventListener('click', () => {
         rightArrow.click()
         indexSlide += 1
         if(indexSlide > 0) {
-            console.log(indexSlide)
-            subCoffeeNo.click()
             rightArrow.click()
             indexSlide += 1
         }
         if(indexSlide > 1) {
-            console.log(indexSlide)
-            subTeaNo.click()
             rightArrow.click()
             indexSlide += 1
         }
         if(indexSlide > 2) {
-            console.log(indexSlide)
-            subSnacksNo.click()
             rightArrow.click()
             indexSlide += 1
         }
         if(indexSlide > 3) {
-            console.log(indexSlide)
-            subFruitsNo.click()
             rightArrow.click()
             indexSlide += 1
         }
         if(indexSlide > 4) {
-            console.log(indexSlide)
-            subServiceNo.click()
             rightArrow.click()
             indexSlide += 1
+        }
+        if(indexSlide > 5) {
+            subCoffeeNo.click()
+            subTeaNo.click()
+            subSnacksNo.click()
+            subFruitsNo.click()
+            subServiceNo.click()
         }
         addDnone(backButton)
     }
@@ -368,7 +365,6 @@ nextButton.addEventListener('click', () => {
 if(indexSlide == 0) {
     addDnone(backButton)
 }
-
 
 
 backButton.addEventListener('click', () => {
