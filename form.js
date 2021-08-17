@@ -327,6 +327,21 @@ nextButton.addEventListener('click', () => {
         removeDnone(backButton)
         removeDnone(aboResume)
 	}
+
+    if(nSalaries >= 100) {
+        rightArrow.click()
+        subCoffeeNo.click()
+        rightArrow.click()
+        subTeaNo.click()
+        rightArrow.click()
+        subSnacksNo.click()
+        rightArrow.click()
+        subFruitsNo.click()
+        rightArrow.click()
+        subServiceNo.click()
+        rightArrow.click()
+        addDnone(backButton)
+    }
 })
 
 if(indexSlide == 0) {
@@ -338,10 +353,13 @@ backButton.addEventListener('click', () => {
   	leftArrow.click()
     indexSlide -= 1
   }
+
+  if(indexSlide < 1) {
+        addDnone(aboResume)
+}
   
     if(indexSlide < 2) {
         addDnone(backButton)
-        addDnone(aboResume)
     }
 
     if(indexSlide < 6) {
