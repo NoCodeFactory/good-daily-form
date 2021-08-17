@@ -217,7 +217,6 @@ nextButton.addEventListener('click', () => {
 
     if(parseInt(nSalaries.value) >= 100) {
         if(parseInt(nSalaries.value) >= 100 && indexSlide == 0) {
-            rightArrow.click()
             indexSlide += 1
             addDnone(backButton)
         }
