@@ -252,6 +252,7 @@ nextButton.addEventListener('click', () => {
             subFruitsNo.click()
             subServiceNo.click()
             indexSlide += 1
+            rightArrow.click()
         }
     } else {
 
