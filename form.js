@@ -125,7 +125,7 @@ const mardiRadioButton = document.querySelector('#fruits-mardi')
 const peuImporteRadioButton = document.querySelector('#fruits-peu-importe')
 let mondayCheck = document.querySelector('#monday-check')
 let tuesdayCheck = document.querySelector('#tuesday-check')
-let noneCheck = document.querySelector('#none-check')
+let noneCheck = document.querySelector('#Peu-importe')
 let fruitsPricePerKg = parseFloat(document.querySelector('#fruits-price-per-kg').textContent)
 let fruitsPriceTotal = 0
 
