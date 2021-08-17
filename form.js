@@ -420,10 +420,12 @@ subCoffeeNo.addEventListener('click', () => {
     subCoffee.textContent = "Non"
 
     // Not giving wrong informations in the form post
-    // machineNo.click()
-    // addsCoffeeNo.click()
-    // coffeeGrainChecked = false
-    // coffeeCapsChecked = false
+    machinePrice = 0
+    addsPriceTotal = 0
+    machineNo.click()
+    addsCoffeeNo.click()
+    coffeeGrainChecked = false
+    coffeeCapsChecked = false
 
     deductToPrice(coffeePrice)
     coffeePrice = 0
