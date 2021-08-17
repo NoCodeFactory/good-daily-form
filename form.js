@@ -216,36 +216,38 @@ nextButton.addEventListener('click', () => {
   }
 
     if(parseInt(nSalaries.value) >= 100) {
-        rightArrow.click()
-        indexSlide += 1
-        if(indexSlide == 1) {
-            subCoffeeNo.click()
+        if(indexSlide == 0) {
             rightArrow.click()
             indexSlide += 1
+        }
+        if(indexSlide == 1) {
+            subCoffeeNo.click()
+            indexSlide += 1
+            rightArrow.click()
         }
         if(indexSlide == 2) {
             subTeaNo.click()
-            rightArrow.click()
             indexSlide += 1
+            rightArrow.click()
         }
         if(indexSlide == 3) {
             subSnacksNo.click()
-            rightArrow.click()
             indexSlide += 1
+            rightArrow.click()
         }
         if(indexSlide == 4) {
             subFruitsNo.click()
-            rightArrow.click()
             indexSlide += 1
+            rightArrow.click()
         }
         if(indexSlide == 5) {
             subServiceNo.click()
-            rightArrow.click()
             indexSlide += 1
+            rightArrow.click()
         }
         addDnone(backButton)
     } else {
-        
+
         if(indexSlide === 0) {
             addDnone(seeAboResume)    
         } else {
