@@ -216,36 +216,41 @@ nextButton.addEventListener('click', () => {
   }
 
     if(parseInt(nSalaries.value) >= 100) {
-        if(indexSlide == 0) {
+        if(parseInt(nSalaries.value) >= 100 && indexSlide == 0) {
             rightArrow.click()
             indexSlide += 1
+            addDnone(backButton)
         }
-        if(indexSlide == 1) {
+    
+        if(parseInt(nSalaries.value) >= 100 && indexSlide == 1) {
             subCoffeeNo.click()
             indexSlide += 1
             rightArrow.click()
         }
-        if(indexSlide == 2) {
+    
+        if(parseInt(nSalaries.value) >= 100 && indexSlide == 2) {
             subTeaNo.click()
             indexSlide += 1
             rightArrow.click()
         }
-        if(indexSlide == 3) {
+    
+        if(parseInt(nSalaries.value) >= 100 && indexSlide == 3) {
             subSnacksNo.click()
             indexSlide += 1
             rightArrow.click()
         }
-        if(indexSlide == 4) {
+    
+        if(parseInt(nSalaries.value) >= 100 && indexSlide == 4) {
             subFruitsNo.click()
             indexSlide += 1
             rightArrow.click()
         }
-        if(indexSlide == 5) {
+    
+        if(parseInt(nSalaries.value) >= 100 && indexSlide == 5) {
             subServiceNo.click()
             indexSlide += 1
             rightArrow.click()
         }
-        addDnone(backButton)
     } else {
 
         if(indexSlide === 0) {
