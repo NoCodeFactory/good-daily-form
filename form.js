@@ -221,7 +221,7 @@ nextButton.addEventListener('click', () => {
     	removeDnone(seeAboResume)
     }
 
-    if(nSalaries >= 100) {
+    if(parseInt(nSalaries.value) >= 100) {
         rightArrow.click()
         indexSlide += 1
         if(indexSlide > 0) {
