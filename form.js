@@ -189,7 +189,7 @@ const removeDnone = (element) => {
 
 // Adding the current price to the total price
 const addingToPrice = (currentPrice) => {
-    addedSubPrice = addedSubPrice + currentPrice
+    addedSubPrice += currentPrice
     subscriptionPrice.textContent = addedSubPrice.toFixed(2)
     singlePrice.textContent = (parseFloat(addedSubPrice) / (parseInt(nSalaries.value) * daysWorkMonth)).toFixed(2)
 
@@ -200,7 +200,7 @@ const addingToPrice = (currentPrice) => {
 
 //  Deduct the current price from the total price
 const deductToPrice = (currentPrice) => {
-    addedSubPrice = addedSubPrice - currentPrice
+    addedSubPrice -= currentPrice
     subscriptionPrice.textContent = addedSubPrice.toFixed(2)
     singlePrice.textContent = (parseFloat(addedSubPrice) / (parseInt(nSalaries.value) * daysWorkMonth)).toFixed(2)
 
@@ -416,6 +416,8 @@ subCoffeeNo.addEventListener('click', () => {
     subCoffee.textContent = "Non"
 
     // Not giving wrong informations in the form post
+    addingToPrice(machinePrice)
+    addingToPrice(addsPriceTotal)
     machineNo.click()
     addsCoffeeNo.click()
     coffeeGrainChecked = false
@@ -423,7 +425,23 @@ subCoffeeNo.addEventListener('click', () => {
 
     deductToPrice(coffeePrice)
     coffeePrice = 0
+    coffeeGrainPrice = 0
+    coffeeCapsPrice = 0
+    machinePrice = 0
+    addsPriceTotal = 0
     securityPriceCoffee = false
+
+    // Reset style radio button
+    coffeeGrain.children[0].classList.remove('w--redirected-checked')
+    coffeeCapsules.children[0].classList.remove('w--redirected-checked')
+    machineYes.children[0].classList.remove('w--redirected-checked')
+    machineNo.children[0].classList.remove('w--redirected-checked')
+    addsCoffeeYes.children[0].classList.remove('w--redirected-checked')
+    addsCoffeeNo.children[0].classList.remove('w--redirected-checked')
+
+    // d-none on coffee sections
+    addDnone(machineContent)
+    addDnone(addsContent)
 })
 
 const machinePriceCalculation = () => {
@@ -519,10 +537,13 @@ coffeeGrain.addEventListener('click', () => {
       deductToPrice(coffeeCapsPrice)
       coffeeCapsPrice = 0
 
-      deductToPrice(machinePrice)
-      machinePrice = 0
-      machinePriceCalculation()
-      coffeeGrainPrice += machinePrice
+      if(machinePrice > 0) {
+          deductToPrice(machinePrice)
+          machinePrice = 0
+      } else {
+          machinePriceCalculation()
+          coffeeGrainPrice += machinePrice
+      }
 
       coffeePrice = coffeeGrainPrice
       resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
@@ -536,10 +557,13 @@ coffeeGrain.addEventListener('click', () => {
         deductToPrice(coffeeCapsPrice)
         coffeeCapsPrice = 0
         
-        deductToPrice(machinePrice)
-        machinePrice = 0
-        machinePriceCalculation()
-        coffeeGrainPrice += machinePrice
+        if(machinePrice > 0) {
+            deductToPrice(machinePrice)
+            machinePrice = 0
+        } else {
+            machinePriceCalculation()
+            coffeeGrainPrice += machinePrice
+        }
         
         deductToPrice(addsPriceTotal)
         coffeeGrainPrice += addsPriceTotal
@@ -601,10 +625,13 @@ coffeeCapsules.addEventListener('click', () => {
         deductToPrice(coffeeGrainPrice)
         coffeeGrainPrice = 0
 
-        deductToPrice(machinePrice)
-        machinePrice = 0
-        machinePriceCalculation()
-        coffeeCapsPrice += machinePrice
+        if(machinePrice > 0) {
+            deductToPrice(machinePrice)
+            machinePrice = 0
+        } else {
+            machinePriceCalculation()
+            coffeeCapsPrice += machinePrice
+        }
 
         coffeePrice = coffeeCapsPrice
         resumeCoffeePrice.textContent = coffeePrice.toFixed(2)
@@ -618,10 +645,13 @@ coffeeCapsules.addEventListener('click', () => {
         deductToPrice(coffeeGrainPrice)
         coffeeGrainPrice = 0
 
-        deductToPrice(machinePrice)
-        machinePrice = 0
-        machinePriceCalculation()
-        coffeeCapsPrice += machinePrice
+        if(machinePrice > 0) {
+            deductToPrice(machinePrice)
+            machinePrice = 0
+        } else {
+            machinePriceCalculation()
+            coffeeCapsPrice += machinePrice
+        }
 
         deductToPrice(addsPriceTotal)
         coffeeCapsPrice += addsPriceTotal
