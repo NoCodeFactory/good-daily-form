@@ -214,106 +214,6 @@ nextButton.addEventListener('click', () => {
     if(indexSlide < 1) {
         nSalariesPresents = parseFloat(nSalaries.value) * (5 - parseFloat(jourTravail.value)) / 5
   }
-	
-    if(indexSlide === 0) {
-	    addDnone(seeAboResume)    
-    } else {
-    	removeDnone(seeAboResume)
-    }
-
-    // Conditionnal informations company
-    if(indexSlide === 0 && nSalaries.value != "" && jourTravail.value != "" && pointConso.value != "") {
-        rightArrow.click()
-        indexSlide += 1
-        removeDnone(aboResume)
-        addDnone(errorMessage)
-    } else {
-        removeDnone(errorMessage)
-    }
-
-    // Conditionnal Coffee
-    if(indexSlide === 1 && subCoffee.textContent === "Oui") {
-        if(coffeeGrainChecked === true || coffeeCapsChecked === true) {
-            rightArrow.click()
-            indexSlide += 1
-            addDnone(errorMessage)
-        } else {
-            removeDnone(errorMessage)
-        }
-    } else if(indexSlide === 1 && subCoffee.textContent === "Non") {
-        rightArrow.click()
-        indexSlide += 1
-        addDnone(errorMessage)
-    } else if(indexSlide === 1 && subCoffee.textContent === "") {
-        removeDnone(errorMessage)
-    }
-
-    // Conditionnal Tea
-    if(indexSlide === 2 && subTea.textContent === "Oui") {
-        if(resumeTeaText.textContent === "vrac" || resumeTeaText.textContent === "sachets") {
-            rightArrow.click()
-            indexSlide += 1
-            addDnone(errorMessage)
-        } 
-    } else if(indexSlide === 2 && subTea.textContent === "Non") {
-        rightArrow.click()
-        indexSlide += 1
-        addDnone(errorMessage)
-    } else if(indexSlide === 2 && subTea.textContent === ""){
-        removeDnone(errorMessage)
-    }
-
-    // Conditionnal Snacks
-    if(indexSlide === 3 && subSnacks.textContent === "Oui") {
-        rightArrow.click()
-        indexSlide += 1
-        addDnone(errorMessage)
-    } else if (indexSlide === 3 && subSnacks.textContent === "Non") {
-        rightArrow.click()
-        indexSlide += 1
-        addDnone(errorMessage)
-    } else if(indexSlide === 3 && subSnacks.textContent === "") {
-        removeDnone(errorMessage)
-    }
-
-    // Conditionnal Fruits
-    if(indexSlide === 4 && subFruits.textContent === "Oui") {
-        if(resumeFruitsDay.textContent === "lundi" || resumeFruitsDay.textContent === "mardi" || resumeFruitsDay.textContent === "lundi ou mardi") {
-            rightArrow.click()
-            indexSlide += 1
-            addDnone(errorMessage)
-        } else {
-            removeDnone(errorMessage)
-        }
-    } else if (indexSlide === 4 && subFruits.textContent === "Non") {
-        rightArrow.click()
-        indexSlide += 1
-        addDnone(errorMessage)
-    } else if(indexSlide === 4 && subFruits.textContent === ""){
-        removeDnone(errorMessage)
-    }
-
-    // Conditionnal Service
-    if(indexSlide === 5 && subService.textContent === "Oui") {
-        if(borneCoffeeCheck.checked === true || borneCapsCheck.checked === true || bornePaperCardboardCheck.checked === true || bornePlasticCheck.checked === true || borneCanCheck.checked === true || borneGlassCheck.checked === true || borneDibCheck.checked === true) {
-            rightArrow.click()
-            indexSlide += 1
-            addDnone(errorMessage)
-        } else {
-            removeDnone(errorMessage)
-        }
-    } else if (indexSlide === 5 && subService.textContent === "Non") {
-        rightArrow.click()
-        indexSlide += 1
-        addDnone(errorMessage)
-    } else if(indexSlide === 5 && subService.textContent === "") {
-        removeDnone(errorMessage)
-    }
-  
-    if(indexSlide >= 2) {
-        removeDnone(backButton)
-        removeDnone(aboResume)
-	}
 
     if(parseInt(nSalaries.value) >= 100) {
         rightArrow.click()
@@ -344,6 +244,107 @@ nextButton.addEventListener('click', () => {
             indexSlide += 1
         }
         addDnone(backButton)
+    } else {
+        
+        if(indexSlide === 0) {
+            addDnone(seeAboResume)    
+        } else {
+            removeDnone(seeAboResume)
+        }
+    
+        // Conditionnal informations company
+        if(indexSlide === 0 && nSalaries.value != "" && jourTravail.value != "" && pointConso.value != "") {
+            rightArrow.click()
+            indexSlide += 1
+            removeDnone(aboResume)
+            addDnone(errorMessage)
+        } else {
+            removeDnone(errorMessage)
+        }
+    
+        // Conditionnal Coffee
+        if(indexSlide === 1 && subCoffee.textContent === "Oui") {
+            if(coffeeGrainChecked === true || coffeeCapsChecked === true) {
+                rightArrow.click()
+                indexSlide += 1
+                addDnone(errorMessage)
+            } else {
+                removeDnone(errorMessage)
+            }
+        } else if(indexSlide === 1 && subCoffee.textContent === "Non") {
+            rightArrow.click()
+            indexSlide += 1
+            addDnone(errorMessage)
+        } else if(indexSlide === 1 && subCoffee.textContent === "") {
+            removeDnone(errorMessage)
+        }
+    
+        // Conditionnal Tea
+        if(indexSlide === 2 && subTea.textContent === "Oui") {
+            if(resumeTeaText.textContent === "vrac" || resumeTeaText.textContent === "sachets") {
+                rightArrow.click()
+                indexSlide += 1
+                addDnone(errorMessage)
+            } 
+        } else if(indexSlide === 2 && subTea.textContent === "Non") {
+            rightArrow.click()
+            indexSlide += 1
+            addDnone(errorMessage)
+        } else if(indexSlide === 2 && subTea.textContent === ""){
+            removeDnone(errorMessage)
+        }
+    
+        // Conditionnal Snacks
+        if(indexSlide === 3 && subSnacks.textContent === "Oui") {
+            rightArrow.click()
+            indexSlide += 1
+            addDnone(errorMessage)
+        } else if (indexSlide === 3 && subSnacks.textContent === "Non") {
+            rightArrow.click()
+            indexSlide += 1
+            addDnone(errorMessage)
+        } else if(indexSlide === 3 && subSnacks.textContent === "") {
+            removeDnone(errorMessage)
+        }
+    
+        // Conditionnal Fruits
+        if(indexSlide === 4 && subFruits.textContent === "Oui") {
+            if(resumeFruitsDay.textContent === "lundi" || resumeFruitsDay.textContent === "mardi" || resumeFruitsDay.textContent === "lundi ou mardi") {
+                rightArrow.click()
+                indexSlide += 1
+                addDnone(errorMessage)
+            } else {
+                removeDnone(errorMessage)
+            }
+        } else if (indexSlide === 4 && subFruits.textContent === "Non") {
+            rightArrow.click()
+            indexSlide += 1
+            addDnone(errorMessage)
+        } else if(indexSlide === 4 && subFruits.textContent === ""){
+            removeDnone(errorMessage)
+        }
+    
+        // Conditionnal Service
+        if(indexSlide === 5 && subService.textContent === "Oui") {
+            if(borneCoffeeCheck.checked === true || borneCapsCheck.checked === true || bornePaperCardboardCheck.checked === true || bornePlasticCheck.checked === true || borneCanCheck.checked === true || borneGlassCheck.checked === true || borneDibCheck.checked === true) {
+                rightArrow.click()
+                indexSlide += 1
+                addDnone(errorMessage)
+            } else {
+                removeDnone(errorMessage)
+            }
+        } else if (indexSlide === 5 && subService.textContent === "Non") {
+            rightArrow.click()
+            indexSlide += 1
+            addDnone(errorMessage)
+        } else if(indexSlide === 5 && subService.textContent === "") {
+            removeDnone(errorMessage)
+        }
+      
+        if(indexSlide >= 2) {
+            removeDnone(backButton)
+            removeDnone(aboResume)
+        }
     }
 
     if(indexSlide === 6) {
