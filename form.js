@@ -219,9 +219,9 @@ nextButton.addEventListener('click', () => {
         if(parseInt(nSalaries.value) >= 100 && indexSlide == 0 && jourTravail.value != "" && pointConso.value != "") {
             indexSlide += 1
             addDnone(backButton)
-            removeDnone(errorMessage)
-        } else {
             addDnone(errorMessage)
+        } else {
+            removeDnone(errorMessage)
         }
     
         if(parseInt(nSalaries.value) >= 100 && indexSlide == 1) {
