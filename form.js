@@ -212,7 +212,7 @@ const deductToPrice = (currentPrice) => {
 // Moving throught the form
 nextButton.addEventListener('click', () => {
     if(indexSlide < 1) {
-        nSalariesPresents = parseFloat(nSalaries.value) * (5 - parseFloat(jourTravail.value)) / 5
+        nSalariesPresents = Math.round(parseFloat(nSalaries.value) * (5 - parseFloat(jourTravail.value)) / 5)
   }
 
     if(parseInt(nSalaries.value) >= 100) {
